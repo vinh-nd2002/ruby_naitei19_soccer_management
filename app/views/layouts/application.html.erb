@@ -18,31 +18,25 @@
 
 </head>
 
+<!--For user view-->
+<!--<body>-->
+  <%#= render "user_layouts/header" %>
+  <%#= render "user_layouts/banner" %>
+  <%#= yield %>
+  <%#= render "user_layouts/footer" %>
+<!--</body>-->
 
+<!--For admin view-->
 <body class="hold-transition sidebar-mini layout-fixed">
-  <!-- Site wrapper -->
   <div class="wrapper">
     <%= render "layouts/navbar" %>
-    
     <%= render "layouts/sidebar" %>
-    
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <%= render "layouts/header" %>
-      
       <%= yield %>
     </div>
-    <!-- /.content-wrapper -->
-    
     <%= render "layouts/footer" %>
-    
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
   </div>
-  <!-- ./wrapper -->
 </body>
 
 </html>
