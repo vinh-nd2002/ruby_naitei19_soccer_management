@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-  
+
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,24 +19,23 @@
 </head>
 
 <!--For user view-->
-<!--<body>-->
-  <%#= render "user_layouts/header" %>
-  <%#= render "user_layouts/banner" %>
-  <%#= yield %>
-  <%#= render "user_layouts/footer" %>
-<!--</body>-->
+  <body>
+    <%= render "layouts/users/header" %>
+    <%= render "layouts/users/banner" %>
+    <%= yield %>
+    <%= render "layouts/users/footer" %>
+  </body>
 
 <!--For admin view-->
-<body class="hold-transition sidebar-mini layout-fixed">
-  <div class="wrapper">
-    <%= render "layouts/navbar" %>
-    <%= render "layouts/sidebar" %>
-    <div class="content-wrapper">
-      <%= render "layouts/header" %>
-      <%= yield %>
-    </div>
-    <%= render "layouts/footer" %>
-  </div>
-</body>
-
+<%# <body class="hold-transition sidebar-mini layout-fixed"> %>
+  <%# <div class="wrapper"> %>
+    <%#= render "layouts/navbar" %>
+    <%#= render "layouts/sidebar" %>
+    <%# <div class="content-wrapper"> %>
+      <%#= render "layouts/header" %>
+      <%#= yield %>
+    <%# </div> %>
+    <%#= render "layouts/footer" %>
+  <%# </div> %>
+<%# </body> %>
 </html>
