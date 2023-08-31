@@ -1,4 +1,5 @@
-class Admin::UsersController < Admin::BaseController
+class RegistersController < ApplicationController
+  layout "layouts/application_user"
   def new
     @user = User.new
   end
@@ -9,7 +10,7 @@ class Admin::UsersController < Admin::BaseController
       reset_session
       log_in @user
       flash[:success] = t "users.create.success"
-      redirect_to @user
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

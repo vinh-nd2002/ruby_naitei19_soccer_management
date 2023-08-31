@@ -38,6 +38,29 @@
             <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
           </li>
         </ul>
+        <% if logged_in? %>
+          <div class="dropdown font-medium lg:flex-row lg:space-x-8 lg:mt-0 flex mt-2">
+            <a href="#" id="account" class="dropdown-toggle">
+              <%= t("hello") %> <b class="caret"></b>
+            </a>
+            <ul id="dropdown-menu" class="dropdown-menu">
+              <li><%= link_to t("users.profile"), '#' %></li>
+              <li><%= link_to t("users.settings"), '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t("users.logout"), logout_path,
+                                       data: { "turbo-method": :delete } %>
+              </li>
+            </ul>
+          </div>
+          <% else %>
+            <div class="flex justify-center items-center ">
+              <div class="space-x-2">
+                <%= link_to t("login.title"), login_path, class: "bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-md" %>
+                <%= link_to t("sign_up.title"), signup_path, class: "bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md" %>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
   </nav>
