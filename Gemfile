@@ -6,6 +6,7 @@ ruby "3.2.2"
 gem "bootsnap", require: false
 gem "config", "~> 4.2"
 gem "figaro", "~> 1.2"
+gem "font-awesome-sass", "~> 6.4"
 gem "importmap-rails"
 gem "jbuilder"
 gem "mysql2", "~> 0.5"
