@@ -11,3 +11,29 @@ en:
     capacity: "Capacity: %{capacity}"
     price: "%{price}/h"
     booking: "Booking"
+  hello: "Hello world"
+  sign_up:
+    title: "Sign up"
+    form:
+      name:
+        label: "Name"
+        placeholder: "Enter your name"
+      email:
+        label: "Email"
+        placeholder: "Enter your email address"
+      phone:
+        label: "Phone number"
+        placeholder: "Enter your phone number"
+      password:
+        label: "Password"
+        placeholder: "Enter your password"
+      confirm:
+        label: "Confirm password"
+        placeholder: "Please enter the password again"
+    errors:
+      error_message: "The form contains %{message}."
+      error: "error"
+  users:
+    create:
+      success: "Create success"
+    not_found: "Not found"

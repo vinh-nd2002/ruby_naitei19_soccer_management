@@ -1,7 +1,14 @@
-I18N_SETTING:
-  AVAILABLE_LOCALES:
+i18n_setting:
+  available_locales:
     - :en
     - :vi
-  DEFAULT_LOCALE: :vi
-PITCHES:
-  PER_PAGE: 12
+  default_locale: :vi
+pitches:
+  per_page: 12
+users: 
+  max_name: 50
+  valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  valid_password_regex: !ruby/regexp /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z/
+  min_password: 8
+  max_email: 255
+  avatar_size: 80
