@@ -1,0 +1,5 @@
+I18N_SETTING:
+ AVAILABLE_LOCALES:
+  - :en
+  - :vi
+ DEFAULT_LOCALE: :en
