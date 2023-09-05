@@ -1,0 +1,13 @@
+vi:
+  number:
+    currency:
+      format:
+        unit: "₫"
+        delimiter: "."
+        separator: ","
+        format: "%n %u"
+        precision: 0
+  football_pitch:
+    capacity: "Số người: %{capacity}"
+    price: "Giá: %{price}/Giờ"
+    booking: "Đặt sân"
