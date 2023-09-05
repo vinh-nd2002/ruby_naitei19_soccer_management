@@ -21,7 +21,7 @@ module RailsTutorial
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.available_locales = Settings.I18N_SETTING.AVAILABLE_LOCALES
-    config.i18n.default_locale = Settings.I18N_SETTING.DEFAULT_LOCALE
+    config.i18n.available_locales = Settings.i18n_setting.available_locales
+    config.i18n.default_locale = Settings.i18n_setting.default_locale
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_182003) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_31_092349) do
   create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "football_pitch_id"
@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_182003) do
     t.string "reset_digest_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
