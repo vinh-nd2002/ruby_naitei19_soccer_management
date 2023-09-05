@@ -11,6 +11,18 @@ vi:
     capacity: "Số người: %{capacity}"
     price: "Giá: %{price}/Giờ"
     booking: "Đặt sân"
+    not_found: "Không tìm thấy kết quả nào."
+    search_form:
+      name: "Tên sân bóng"
+      placeholder_name: "Nhập tên sân bóng"
+      location: "Địa chỉ"
+      placeholder_location: "Nhập địa điểm sân bóng"
+      search: "Tìm kiếm"
+      date: "Ngày đá"
+      start_time: "Giờ bắt đầu"
+      end_time: "Giờ kết thúc"
+      capacity: "Số người"
+      price: "Tiền sân"
   hello: "Chào thế giới"
   sign_up:
     title: "Đăng ký"
@@ -44,7 +56,7 @@ vi:
     title: "Đăng nhập"
     remember_me: "Nhớ đăng nhập"
     failed: "Email/mật khẩu không hợp lệ"
-    form: 
+    form:
       email: "Email"
       password: "Mật khẩu"
       forget_pass: "Quên mật khẩu?"

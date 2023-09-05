@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def render_star_rating rating
     full_star = content_tag(:i, "", class: "fas fa-star")
     half_star = content_tag(:i, "", class: "fas fa-star-half-alt")
