@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+class User::StaticPagesController < User::BaseController
   def index
     @football_pitches = FootballPitch.all
     @pagy, @football_pitch_items = pagy @football_pitches,
