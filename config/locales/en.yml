@@ -52,6 +52,7 @@ en:
     profile: "Profile"
     settings: "Settings"
     logout: "Log out"
+    hello: "Hello, %{name}"
   login:
     title: "Login"
     remember_me: "Remember me"
@@ -60,3 +61,7 @@ en:
       email: "Email"
       password: "Password"
       forget_pass: "Forget password?"
+  home:
+    title: "Home"
+  admin:
+    forbidden: "You do not have permission to access this page"

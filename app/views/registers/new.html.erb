@@ -1,12 +1,12 @@
 <div class="container mx-auto">
-  <div class="flex justify-center mt-8">
+  <div class="flex justify-center mt-30">
     <div class="w-2/3">
     <%= render "shared/error_messages" %>
       <div class="mt-3">
         <h1 class="text-2xl font-semibold"><%= t("sign_up.title") %></h1>
       </div>
       <%= form_with model: @user, url: signup_path do |form| %>
-        
+
         <div class="mt-4">
           <%= form.label :name, t("sign_up.form.name.label"), class: "block text-sm font-medium text-gray-700" %>
           <%= form.text_field :name, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("sign_up.form.name.placeholder") %>

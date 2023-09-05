@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-
   include SessionsHelper
+
   before_action :set_locale
 
   private
@@ -17,5 +17,12 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def check_admin_role
+    return if admin?
+
+    flash[:danger] = t "admin.forbidden"
+    redirect_to root_path
   end
 end

@@ -1,9 +1,12 @@
-document.addEventListener("turbo:load", function() {
-  let account = document.querySelector("#account");
+document.addEventListener("turbo:load", function () {
+  let button = document.getElementById("dropdownAccount");
+  let dropdown = document.getElementById("dropdown");
 
-  account && account.addEventListener("click", function(event) {
-    event.preventDefault();
-    let menu = document.querySelector("#dropdown-menu");
-    menu.classList.toggle("active");
+  button?.addEventListener("click", function () {
+    if (dropdown.classList.contains("hidden")) {
+      dropdown.classList.remove("hidden");
+    } else {
+      dropdown.classList.add("hidden");
+    }
   });
-})
+});

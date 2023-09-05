@@ -16,13 +16,23 @@ class SessionsController < ApplicationController
   private
   def check_save user
     if user&.authenticate(params[:session][:password])
-      reset_session
-      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      log_in user
-      redirect_to root_path
+      handle_successful_login user
     else
-      flash.now[:danger] = t "login.failed"
-      render :new, status: :unprocessable_entity
+      handle_failed_login
     end
+  end
+
+  def handle_successful_login user
+    reset_session
+    params[:session][:remember_me] == "1" ? remember(user) : forget(user)
+    log_in(user)
+    redirect_to admin_path and return if admin?
+
+    redirect_to root_path
+  end
+
+  def handle_failed_login
+    flash.now[:danger] = t("login.failed")
+    render :new, status: :unprocessable_entity
   end
 end
