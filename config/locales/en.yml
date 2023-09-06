@@ -37,3 +37,14 @@ en:
     create:
       success: "Create success"
     not_found: "Not found"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log out"
+  login:
+    title: "Login"
+    remember_me: "Remember me"
+    failed: "Invalid email/password combination"
+    form: 
+      email: "Email"
+      password: "Password"
+      forget_pass: "Forget password?"
