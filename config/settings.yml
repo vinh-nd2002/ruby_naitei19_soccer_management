@@ -14,3 +14,4 @@ users:
   max_email: 255
   avatar_size: 80
   max_text: 200
+time_zone: "Central Time (US & Canada)"

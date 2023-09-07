@@ -1,0 +1,17 @@
+<% provide(:title, t("password_reset.forgot")) %>
+<h1 class="text-center text-2xl font-bold mt-4"><%= t("password_reset.forgot") %></h1>
+
+<div class="flex justify-center mt-8">
+  <div class="">
+    <%= form_with(url: password_resets_path, scope: :password_reset) do |f| %>
+      <div class="mb-4 justify-center">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.email_field :email, class: "form-input" %>
+      </div>
+
+      <div class="flex justify-center">
+        <%= f.submit t("password_reset.submit"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -72,4 +72,17 @@ Rails.application.configure do
 
   # config/environments/development.rb
   config.sass.inline_source_maps = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {host: ENV["host"]}
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    address: ENV["address"],
+    port: 587,
+    user_name: ENV["USER_EMAIL"],
+    password: ENV["USER_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
 end

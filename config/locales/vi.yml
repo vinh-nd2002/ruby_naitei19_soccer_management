@@ -116,3 +116,31 @@ vi:
       failed: "Find thất bại"
   side_bar:
     create_pitch: "Tạo sân bóng mới"
+  football_pitches:
+    title: "Danh sách sân bóng"
+  activation:
+    success: "Tài khoản đã được kích hoạt!"
+    invalid_link: "Liên kết kích hoạt không hợp lệ"
+    check_mail: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
+    not_actived: "Tài khoản chưa được kích hoạt."
+    confirm: "Vui lòng xác nhận email của bạn để kích hoạt tài khoản"
+    subject: "Kích hoạt tài khoản"
+    welcome: "Xin chào %{name}! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn"
+    active: "Kích hoạt"
+  password_reset:
+    title: "Đặt lại mật khẩu"
+    forgot: "Quên mật khẩu"
+    submit: "Submit"
+    send_mail: "Email được gửi kèm hướng dẫn đặt lại mật khẩu"
+    not_found: "Không tìm thấy địa chỉ email"
+    cant_empty: "không thể trống"
+    success: "Mật khẩu đã được đặt lại."
+    expiration: "Việc đặt lại mật khẩu đã hết hạn."
+    in_actived: "Người dùng không được kích hoạt!"
+    form:
+      password: "Mật khẩu"
+      confirm: "Xác nhận"
+      submit: "Cập nhật mật khẩu"
+    expire_message: "Liên kết này sẽ hết hạn sau hai giờ."
+    click_link: "Để đặt lại mật khẩu của bạn hãy nhấp vào liên kết bên dưới:"
+    more_info: "Nếu bạn không yêu cầu đặt lại mật khẩu của mình, vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."

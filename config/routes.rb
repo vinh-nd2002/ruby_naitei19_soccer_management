@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    # root "static_pages#index"
     # User scope
     scope module: "user" do
       root "static_pages#index"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
       resources :football_pitches, only: %i(index)
       resources :favorite_pitches, only: %i(index)
       resources :static_pages
+      resources :account_activations, only: %i(edit)
     end
 
     # Admin scope
@@ -24,5 +26,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+
+    resources :password_resets, only: %i(new create edit update)
   end
 end
