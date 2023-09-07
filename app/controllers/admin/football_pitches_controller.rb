@@ -1,4 +1,7 @@
 class Admin::FootballPitchesController < Admin::BaseController
+  # callback
+  before_action :find_football_pitch_base_id, only: %i(edit update)
+
   def index
     @football_pitches = FootballPitch.newest
   end
@@ -16,11 +19,31 @@ class Admin::FootballPitchesController < Admin::BaseController
     end
   end
 
+  def edit; end
+
+  def update
+    if @football_pitch.update football_pitch_params
+      flash[:success] = t "football_pitches.update.success"
+      redirect_to admin_football_pitch_path @football_pitch
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def football_pitch_params
     params.require(:football_pitch).permit(:name, :location, :length, :width,
                                            :capacity, :price, :description,
                                            :football_pitch_types, images: [])
+  end
+
+  def find_football_pitch_base_id
+    @football_pitch = FootballPitch.find_by id: params[:id]
+
+    return if @football_pitch
+
+    flash[:warning] = t "football_pitches.find_pitch_failed"
+    render :edit, status: :unprocessable_entity
   end
 end
