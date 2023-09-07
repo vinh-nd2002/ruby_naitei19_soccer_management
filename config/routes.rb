@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     namespace :admin do
       get "/", to: "static_pages#index"
       resources :users
+      resources :football_pitches
     end
 
     get "/signup",  to: "registers#new"

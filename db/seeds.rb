@@ -19,8 +19,9 @@ FootballPitch.destroy_all
     length: Faker::Number.decimal(l_digits: 2),
     width: Faker::Number.decimal(l_digits: 2),
     capacity: [5, 7, 11].sample,
-    price: (Faker::Number.between(from: 10, to: 99) * 10000),
-    description: Faker::Lorem.paragraph
+    price: (Faker::Number.between(from: 30, to: 99) * 10000),
+    description: Faker::Lorem.paragraph,
+    football_pitch_types: FootballPitch.football_pitch_types[:slot5]
   )
 end
 

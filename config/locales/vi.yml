@@ -23,6 +23,32 @@ vi:
       end_time: "Giờ kết thúc"
       capacity: "Số người"
       price: "Tiền sân"
+  football_pitches:
+    title: "Danh sách sân bóng đá"
+    form:
+      title: "Tên của sân bóng"
+      location: "Địa điểm"
+      length: "Chiều dài"
+      width: "Chiều rộng"
+      capacity: "Sức chứa"
+      price: "Giá"
+      description: "Mô tả"
+      football_pitch_types: "Loại sân bóng đá"
+      upload_images: "Tải ảnh lên"
+      submit: "Upload thông tin"
+    edit_pitch_title: "Edit Pitch"
+    detail_pitch_title: "Detail"
+    create_pitch_title: "Create Pitch"
+    pitch_info:
+      title: "Pitch information"
+    create:
+      success: "Tạo sân bóng thành công"
+      failed: "Tạo sân bóng thất bại"
+    delete:
+      title: "Delete"
+      success: "Delete pitch info success"
+      failed: "Delete pitch failed"
+      delete_confirm: "Delete confirm"
   hello: "Chào thế giới"
   sign_up:
     title: "Đăng ký"
@@ -81,3 +107,5 @@ vi:
     find_football_pitch:
       success: "Find thành công"
       failed: "Find thất bại"
+  side_bar:
+    create_pitch: "Tạo sân bóng mới"

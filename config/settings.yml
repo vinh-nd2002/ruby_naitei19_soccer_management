@@ -5,6 +5,7 @@ i18n_setting:
   default_locale: :vi
 pitches:
   per_page: 12
+  min_length: 0
 users: 
   max_name: 50
   valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -12,3 +13,4 @@ users:
   min_password: 8
   max_email: 255
   avatar_size: 80
+  max_text: 200
