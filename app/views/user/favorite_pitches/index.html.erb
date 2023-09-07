@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-indigo-500 my-10 font-bold text-4xl"><%= t "users.favorite_pitches"%></h1>
+  <% if @favorite_pitches.any? %>
+    <div class="grid grid-cols-4 gap-4">
+      <%= render @favorite_pitches %>
+    </div>
+  <% else %>
+    <div class="p-2 bg-yellow-400 text-center font-bold text-white w-full"><%= t "football_pitch.not_found"%></div>
+  <% end %>
+</div>

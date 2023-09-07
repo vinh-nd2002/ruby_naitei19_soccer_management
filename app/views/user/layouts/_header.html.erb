@@ -48,6 +48,9 @@
               <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute">
                 <ul class="p-2 mb-0 text-sm text-gray-700" aria-labelledby="dropdownAccount">
                   <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold"><%= link_to t("users.profile"), '#' %></li>
+                  <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold">
+                    <%= link_to t("users.favorite_pitches"), favorite_pitches_path %>
+                  </li>
                   <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold"><%= link_to t("users.settings"), '#' %></li>
                   <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold text-red-500">
                     <%= link_to t("users.logout"), logout_path,

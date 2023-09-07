@@ -78,6 +78,7 @@ en:
     profile: "Profile"
     settings: "Settings"
     logout: "Log out"
+    favorite_pitches: "Favorite pitches"
     hello: "Hello, %{name}"
     static_pages:
       show:
@@ -99,6 +100,7 @@ en:
       email: "Email"
       password: "Password"
       forget_pass: "Forget password?"
+    not_login: "Please login"
   home:
     title: "Home"
   admin:
@@ -109,3 +111,5 @@ en:
       failed: "Find football pitch failed"
   side_bar:
     create_pitch: "Create new football pitch"
+  football_pitches:
+    title: "Football Pitches"

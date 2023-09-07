@@ -1,6 +1,6 @@
 <div class="container">
   <%= turbo_frame_tag "search_form" do %>
-    <%= form_tag(football_pitches_path, method: :get, class: "my-3 p-3 border rounded-md") do %>
+    <%= form_tag(@form_action, method: :get, class: "my-3 p-3 border rounded-md") do %>
       <div class="flex flex-col gap-4">
         <div class="flex gap-2">
           <div class="flex-1">

@@ -12,7 +12,7 @@
 # Clear existing data
 FootballPitch.destroy_all
 
-150.times do
+50.times do
   FootballPitch.create(
     name: Faker::Company.unique.name,
     location: Faker::Address.city,
@@ -25,6 +25,35 @@ FootballPitch.destroy_all
   )
 end
 
+# # Generate a bunch of additional users.
+
+20.times do |n|
+  name = Faker::Name.name
+  email = "user#{n + 1}@gmail.com"
+  password = "Abc12345@"
+  password_confirmation = "Abc12345@"
+  phone = Faker::PhoneNumber.phone_number
+  user = User.create!(
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password,
+    is_activated: true,
+    phone: phone,
+    activation_at: Time.zone.now)
+end
+
+# Lấy danh sách tất cả user_ids và football_pitch_ids hiện có
+user_ids = User.pluck(:id)
+football_pitch_ids = FootballPitch.pluck(:id)
+
+# Sử dụng vòng lặp để tạo ngẫu nhiên favorite_pitches
+100.times do
+  user_id = user_ids.sample
+  football_pitch_id = football_pitch_ids.sample
+  FavoritePitch.create!(user_id: user_id, football_pitch_id: football_pitch_id)
+end
+
 User.create!(name:  "Admin",
   email: "admin@gmail.com",
   phone: "0987654321",
@@ -34,23 +63,3 @@ User.create!(name:  "Admin",
   is_activated: true,
   activation_at: Time.zone.now
 )
-
-# Generate a bunch of additional users.
-
-20.times do |n|
-  name = Faker::Name.name
-  email = "user#{n + 1}@gmail.com"
-  password = "Abc12345@"
-  password_confirmation = "Abc12345@"
-  phone = Faker::PhoneNumber.phone_number
-  admin = (n % 4 == 0)
-  user = User.create!(
-    name: name,
-    email: email,
-    password: password,
-    password_confirmation: password,
-    is_activated: true,
-    is_admin: admin,
-    phone: phone,
-    activation_at: Time.zone.now)
-end

@@ -26,4 +26,12 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "admin.forbidden"
     redirect_to root_path
   end
+
+  def logged_in_user
+    return if logged_in?
+
+    flash[:danger] = t "login.not_login"
+    store_location
+    redirect_to login_path
+  end
 end

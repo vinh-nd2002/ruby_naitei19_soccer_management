@@ -5,6 +5,7 @@ class FootballPitch < ApplicationRecord
   # association
   has_many :reviews, dependent: :destroy
   has_many :favorite_pitches, dependent: :destroy
+  has_many :favorited_by_users, through: :favorite_pitches, source: :user
   has_many :bookings, dependent: :destroy
   has_many_attached :images
 
