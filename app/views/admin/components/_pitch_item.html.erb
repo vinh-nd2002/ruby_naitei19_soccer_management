@@ -22,10 +22,12 @@
                 <button class="btn btn-warning mb-2">
                   <%= link_to t("football_pitches.edit_pitch_title"), edit_admin_football_pitch_path(football_pitch), class: "custom-link" %>
                 </button>
-                <button class="btn btn-danger">
-                  <%= link_to t("football_pitches.delete.title"), admin_football_pitch_path(football_pitch), data: {"turbo-method": :delete,
-                                                                                                                    turbo_confirm: t("football_pitches.delete.delete_confirm")}, class: "custom-link" %>
-                </button>
+                <% if FootballPitch.is_valid_football_pitch? football_pitch %>
+                  <button class="btn btn-danger">
+                    <%= link_to t("football_pitches.delete.title"), admin_football_pitch_path(football_pitch), data: {"turbo-method": :delete,
+                                                                                                                      turbo_confirm: t("football_pitches.delete.delete_confirm")}, class: "custom-link" %>
+                  </button>
+                <% end %>
               </div>
             </div>
           
