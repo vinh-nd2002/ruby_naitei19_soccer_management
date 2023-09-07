@@ -6,5 +6,10 @@ class Booking < ApplicationRecord
   # association
   belongs_to :user
   belongs_to :football_pitch
-  belongs_to :discount
+  belongs_to :discount, optional: true
+
+  scope :newest, ->{order(created_at: :desc)}
+
+  delegate :name, :phone, to: :user, prefix: true
+  delegate :name, :location, to: :football_pitch, prefix: true
 end

@@ -25,6 +25,7 @@ en:
       price: "Price"
   football_pitches:
     title: "List pitches"
+    admin: "Football Pitches management"
     form:
       title: "Name of pitch"
       location: "Location"
@@ -142,3 +143,25 @@ en:
     expire_message: "This link will expire in two hours."
     click_link: "To reset your password click the link below:"
     more_info: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+  bookings:
+    title: "Bookings management"
+    booked_by: "Booked by"
+    contact: "Contact"
+    pitch_name: "Pitch Name"
+    location: "Location"
+    date: "Date"
+    start_at: "Start time"
+    end_at: "End time"
+    booking_price: "Price"
+    booked_at: "Booked date"
+    status: "Status"
+    action: "Action"
+    error: "Opps!!! Error"
+    success: "Update successfully"
+    not_found: "Not found"
+    approve:
+      title: "Notification that your order has been accepted"
+      message: "Congratulations, we are sending you information that your soccer field booking request has been accepted"
+    reject:
+      title: "Notification that your order has been rejected"
+      message: "Sorry, we sent you information that your soccer field booking request has been rejected for some reason."

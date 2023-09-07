@@ -17,4 +17,14 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: t("password_reset.title")
   end
+
+  def approve_booking user
+    @user = user
+    mail to: user.email, subject: t("bookings.approve.title")
+  end
+
+  def reject_booking user
+    @user = user
+    mail to: user.email, subject: t("bookings.reject.title")
+  end
 end

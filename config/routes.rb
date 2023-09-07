@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       # resources
       resources :users
       resources :football_pitches
+      resources :bookings, only: %i(index update)
     end
 
     get "/signup",  to: "registers#new"
