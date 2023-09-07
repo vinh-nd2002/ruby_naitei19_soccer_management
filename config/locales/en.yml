@@ -11,6 +11,18 @@ en:
     capacity: "Capacity: %{capacity}"
     price: "%{price}/h"
     booking: "Booking"
+    not_found: "Not found"
+    search_form:
+      name: "Football field's name"
+      placeholder_name: "Please enter football field's name"
+      location: "Location"
+      placeholder_location: "Please enter football field's location"
+      search: "Search"
+      date: "Date"
+      start_time: "Start time"
+      end_time: "End time"
+      capacity: "Capacity"
+      price: "Price"
   hello: "Hello world"
   sign_up:
     title: "Sign up"
@@ -44,7 +56,7 @@ en:
     title: "Login"
     remember_me: "Remember me"
     failed: "Invalid email/password combination"
-    form: 
+    form:
       email: "Email"
       password: "Password"
       forget_pass: "Forget password?"

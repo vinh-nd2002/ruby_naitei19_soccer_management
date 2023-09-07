@@ -1,0 +1,29 @@
+<div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-gray-700 dark:text-gray-400">
+  <a href="#">
+    <img class="rounded-t-lg" src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" alt="" />
+  </a>
+  <div class="p-3 text-sm">
+    <a href="#">
+      <h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-base">
+        <%= football_pitch.name %>
+      </h5>
+    </a>
+    <div class="flex justify-between items-center mb-3">
+      <p class="mb-0"><%= t("football_pitch.capacity", capacity: football_pitch.capacity) %></p>
+      <div class="flex gap-1 items-center text-orange-500">
+        <%= render_star_rating 4.5 %>
+      </div>
+    </div>
+    <div class="flex justify-between items-center gap-1">
+      <h6>
+        <span class="text-orange-400 font-bold">
+          <%= t("football_pitch.price", price: number_to_currency(football_pitch.price)) %>
+        </span>
+      </h6>
+      <button class="flex items-center gap-2 justify-center px-3 py-2 font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-700 shadow">
+        <span><%= t "football_pitch.booking" %></span>
+        <i class="fa-solid fa-phone-flip"></i>
+      </button>
+    </div>
+  </div>
+</div>

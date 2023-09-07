@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     scope module: "user" do
       root "static_pages#index"
       get "/", to: "static_pages#index"
-     
+      resources :football_pitches, only: :index
     end
 
     # Admin scope
