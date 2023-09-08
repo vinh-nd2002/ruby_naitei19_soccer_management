@@ -53,6 +53,18 @@ en:
     settings: "Settings"
     logout: "Log out"
     hello: "Hello, %{name}"
+    static_pages:
+      show:
+        title: "Football pitch detail"
+        name: "Name"
+        location: "Location"
+        length: "Length"
+        width: "Width"
+        capacity: "Capacity"
+        price: "Price"
+        description: "Description"
+        previous: "Previous"
+        next: "Next"
   login:
     title: "Login"
     remember_me: "Remember me"
@@ -65,3 +77,7 @@ en:
     title: "Home"
   admin:
     forbidden: "You do not have permission to access this page"
+  static_pages:
+    find_football_pitch:
+      success: "Find football pitch success"
+      failed: "Find football pitch failed"
