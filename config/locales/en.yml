@@ -82,6 +82,7 @@ en:
     not_found: "Not found"
     profile: "Profile"
     settings: "Settings"
+    change_info: "Change user's information"
     logout: "Log out"
     favorite_pitches: "Favorite pitches"
     hello: "Hello, %{name}"
@@ -97,10 +98,30 @@ en:
         description: "Description"
         previous: "Previous"
         next: "Next"
+    update:
+      basic_info:
+        success: "Update user's basic information successfully"
+        failed: "Update user's basic information fail"
+        form:
+          name: "Name"
+          phone: "Phone"
+      change_password:
+        success: "Password was successfully updated."
+        failed: "Current password is incorrect."
+        form:
+          current_password: "Current Password"
+          new_password: "New Password"
+          password_confirmation: "Password Confirmation"
+      users:
+        title: "Edit user information"
+        basic_information: "Edit user's basic information"
+        change_password: "Change password"
+      submit: "Change information"
   login:
     title: "Login"
     remember_me: "Remember me"
     failed: "Invalid email/password combination"
+    success: "Login successfully"
     form:
       email: "Email"
       password: "Password"

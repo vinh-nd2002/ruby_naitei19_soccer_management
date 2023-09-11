@@ -1,0 +1,18 @@
+<%= render "shared/error_messages", object: item %>
+<%= form_with model: item, url: url do |form| %>
+  
+  <div class="mt-4">
+    <%= form.label :name, t("users.update.basic_info.form.name"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("users.update.basic_info.form.name") %>
+    <p class="text-danger"><%= show_errors(item, :name) %></p>
+  </div>
+  
+  <div class="mt-4">
+    <%= form.label :phone, t("users.update.basic_info.form.phone"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :phone, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("users.update.basic_info.form.phone") %>
+    <p class="text-danger"><%= show_errors(item, :phone) %></p>
+  </div>
+  <div class="mt-6">
+    <%= form.submit t("users.update.submit"), class: "px-4 py-2 !bg-indigo-500 text-white rounded-md hover:bg-indigo-900 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-50" %>
+  </div>
+<% end %>

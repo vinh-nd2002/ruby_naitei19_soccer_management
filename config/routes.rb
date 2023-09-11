@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       resources :favorite_pitches, only: %i(index)
       resources :static_pages
       resources :account_activations, only: %i(edit)
+      resources :users do
+        member do
+          patch "update_password"
+        end
+      end
     end
 
     # Admin scope
