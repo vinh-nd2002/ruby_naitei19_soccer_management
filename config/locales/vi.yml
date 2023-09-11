@@ -52,6 +52,7 @@ vi:
     profile: "Hồ sơ"
     settings: "Cài đặt"
     logout: "Đăng xuất"
+    hello: "Xin chào, %{name}"
   login:
     title: "Đăng nhập"
     remember_me: "Nhớ đăng nhập"
@@ -60,3 +61,7 @@ vi:
       email: "Email"
       password: "Mật khẩu"
       forget_pass: "Quên mật khẩu?"
+  home:
+    title: "Trang chủ"
+  admin:
+    forbidden: "Bạn không có quyền truy cập trang này."

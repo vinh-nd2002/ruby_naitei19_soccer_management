@@ -42,4 +42,8 @@ module SessionsHelper
     reset_session
     @current_user = nil
   end
+
+  def admin?
+    current_user&.is_admin
+  end
 end

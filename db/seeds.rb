@@ -12,7 +12,7 @@
 # Clear existing data
 FootballPitch.destroy_all
 
-100.times do
+150.times do
   FootballPitch.create(
     name: Faker::Company.unique.name,
     location: Faker::Address.city,
@@ -22,4 +22,34 @@ FootballPitch.destroy_all
     price: (Faker::Number.between(from: 10, to: 99) * 10000),
     description: Faker::Lorem.paragraph
   )
+end
+
+User.create!(name:  "Admin",
+  email: "admin@gmail.com",
+  phone: "0987654321",
+  password: "Abc12345@",
+  password_confirmation: "Abc12345@",
+  is_admin: true,
+  is_activated: true,
+  activation_at: Time.zone.now
+)
+
+# Generate a bunch of additional users.
+
+20.times do |n|
+  name = Faker::Name.name
+  email = "user#{n + 1}@gmail.com"
+  password = "Abc12345@"
+  password_confirmation = "Abc12345@"
+  phone = Faker::PhoneNumber.phone_number
+  admin = (n % 4 == 0)
+  user = User.create!(
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password,
+    is_activated: true,
+    is_admin: admin,
+    phone: phone,
+    activation_at: Time.zone.now)
 end

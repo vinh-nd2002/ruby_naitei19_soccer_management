@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get "/", to: "static_pages#index"
       resources :users
     end
+
     get "/signup",  to: "registers#new"
     post "/signup",  to: "registers#create"
     get "/login", to: "sessions#new"

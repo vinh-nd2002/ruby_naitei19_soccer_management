@@ -1,14 +1,14 @@
 <header class="fixed w-full">
-  <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
-    <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-      <a href="#" class="flex items-center">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow z-10">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
+      <%= link_to root_path, class: "flex items-center cursor-pointer text-decoration-none" do %>
         <img src="/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo"/>
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Landwind</span>
-      </a>
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <%= t("home.title") %>
+        </span>
+      <% end %>
       <div class="flex items-center lg:order-2">
-        <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
         <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
           </svg>
@@ -37,30 +37,34 @@
           <li>
             <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
           </li>
-        </ul>
-        <% if logged_in? %>
-          <div class="dropdown font-medium lg:flex-row lg:space-x-8 lg:mt-0 flex mt-2">
-            <a href="#" id="account" class="dropdown-toggle">
-              <%= t("hello") %> <b class="caret"></b>
-            </a>
-            <ul id="dropdown-menu" class="dropdown-menu">
-              <li><%= link_to t("users.profile"), '#' %></li>
-              <li><%= link_to t("users.settings"), '#' %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t("users.logout"), logout_path,
-                                       data: { "turbo-method": :delete } %>
-              </li>
-            </ul>
-          </div>
+            <% if logged_in? %>
+            <li class="relative">
+              <button id="dropdownAccount" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-500  font-medium rounded-lg text-sm p-2 flex w-full text-center items-center gap-2" type="button">
+                <span><%= t("users.hello", name: current_user[:name]) %></span>
+                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute">
+                <ul class="p-2 mb-0 text-sm text-gray-700" aria-labelledby="dropdownAccount">
+                  <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold"><%= link_to t("users.profile"), '#' %></li>
+                  <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold"><%= link_to t("users.settings"), '#' %></li>
+                  <li class="block px-4 py-2 text-base cursor-pointer hover:bg-gray-300 font-bold text-red-500">
+                    <%= link_to t("users.logout"), logout_path,
+                                          data: { "turbo-method": :delete } %>
+                  </li>
+                </ul>
+              </div>
+            </li>
           <% else %>
             <div class="flex justify-center items-center ">
               <div class="space-x-2">
-                <%= link_to t("login.title"), login_path, class: "bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-md" %>
-                <%= link_to t("sign_up.title"), signup_path, class: "bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md" %>
+                <%= link_to t("login.title"), login_path, class: "bg-blue-500 hover:bg-blue-600 text-white px-3 py-3 rounded shadow text-decoration-none" %>
+                <%= link_to t("sign_up.title"), signup_path, class: "bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded shadow text-decoration-none" %>
               </div>
             </div>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </nav>
