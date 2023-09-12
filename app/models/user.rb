@@ -1,7 +1,10 @@
 class User < ApplicationRecord
-  before_save :downcase_email!
   attr_accessor :remember_token
 
+  # callback
+  before_save :downcase_email!
+
+  # validate
   validates :phone, presence: true
   validates :name, presence: true, length: {maximum: Settings.users.max_name}
   validates :password, presence: true,
@@ -12,10 +15,13 @@ class User < ApplicationRecord
                     format: {with: Settings.users.valid_email_regex},
                     uniqueness: true
   has_secure_password
+
   # association
   has_many :favorite_pitches, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  # class methods
   class << self
     # Returns the hash digest of the given string.
     def digest string

@@ -23,6 +23,32 @@ en:
       end_time: "End time"
       capacity: "Capacity"
       price: "Price"
+  football_pitches:
+    title: "List pitches"
+    form:
+      title: "Name of pitch"
+      location: "Location"
+      length: "Length"
+      width: "Width"
+      capacity: "Capacity"
+      price: "Price"
+      description: "Description"
+      football_pitch_types: "Football Pitch Types"
+      upload_images: "Upload Images"
+      submit: "Submit"
+    edit_pitch_title: "Edit Pitch"
+    detail_pitch_title: "Detail"
+    create_pitch_title: "Create Pitch"
+    pitch_info:
+      title: "Pitch information"
+    create:
+      success: "Create Pitch Successfully"
+      failed: "Create Pitch Failed"
+    delete:
+      title: "Delete"
+      success: "Delete pitch info success"
+      failed: "Delete pitch failed"
+      delete_confirm: "Delete confirm"
   hello: "Hello world"
   sign_up:
     title: "Sign up"
@@ -81,3 +107,5 @@ en:
     find_football_pitch:
       success: "Find football pitch success"
       failed: "Find football pitch failed"
+  side_bar:
+    create_pitch: "Create new football pitch"
