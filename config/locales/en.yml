@@ -39,11 +39,16 @@ en:
     edit_pitch_title: "Edit Pitch"
     detail_pitch_title: "Detail"
     create_pitch_title: "Create Pitch"
+    find_pitch_success: "Find pitch success"
+    find_pitch_failed: "Find pitch failed"
     pitch_info:
       title: "Pitch information"
     create:
       success: "Create Pitch Successfully"
       failed: "Create Pitch Failed"
+    update:
+      success: "Update Pitch Successfully"
+      failed: "Update Pitch Failed"
     delete:
       title: "Delete"
       success: "Delete pitch info success"
@@ -111,5 +116,3 @@ en:
       failed: "Find football pitch failed"
   side_bar:
     create_pitch: "Create new football pitch"
-  football_pitches:
-    title: "Football Pitches"
