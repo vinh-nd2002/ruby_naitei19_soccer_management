@@ -53,6 +53,18 @@ vi:
     settings: "Cài đặt"
     logout: "Đăng xuất"
     hello: "Xin chào, %{name}"
+    static_pages:
+      show:
+        title: "Danh sách sân bóng đá"
+        name: "Tên"
+        location: "Địa điểm"
+        length: "Chiều dài"
+        width: "Chiều rộng"
+        capacity: "Sức chứa"
+        price: "Giá tiền"
+        description: "Miêu tả"
+        previous: "Trước"
+        next: "Sau"
   login:
     title: "Đăng nhập"
     remember_me: "Nhớ đăng nhập"
@@ -65,3 +77,7 @@ vi:
     title: "Trang chủ"
   admin:
     forbidden: "Bạn không có quyền truy cập trang này."
+  static_pages:
+    find_football_pitch:
+      success: "Find thành công"
+      failed: "Find thất bại"
