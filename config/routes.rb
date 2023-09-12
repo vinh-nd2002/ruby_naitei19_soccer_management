@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     # Admin scope
     namespace :admin do
       get "/", to: "static_pages#index"
+
+      # resources
       resources :users
       resources :football_pitches
     end
