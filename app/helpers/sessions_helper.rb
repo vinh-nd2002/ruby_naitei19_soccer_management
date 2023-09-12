@@ -46,4 +46,8 @@ module SessionsHelper
   def admin?
     current_user&.is_admin
   end
+
+  def store_location
+    session[:following_url] = request.original_url if request.get?
+  end
 end

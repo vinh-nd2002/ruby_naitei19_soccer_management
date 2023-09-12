@@ -78,6 +78,7 @@ vi:
     profile: "Hồ sơ"
     settings: "Cài đặt"
     logout: "Đăng xuất"
+    favorite_pitches: "Sân yêu thích"
     hello: "Xin chào, %{name}"
     static_pages:
       show:
@@ -99,6 +100,7 @@ vi:
       email: "Email"
       password: "Mật khẩu"
       forget_pass: "Quên mật khẩu?"
+    not_login: "Thým đã đăng nhập đâu?"
   home:
     title: "Trang chủ"
   admin:
@@ -109,3 +111,5 @@ vi:
       failed: "Find thất bại"
   side_bar:
     create_pitch: "Tạo sân bóng mới"
+  football_pitches:
+    title: "Danh sách sân bóng"

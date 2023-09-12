@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   # association
   has_many :favorite_pitches, dependent: :destroy
+  has_many :football_pitches, through: :favorite_pitches,
+                              source: :football_pitch
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
