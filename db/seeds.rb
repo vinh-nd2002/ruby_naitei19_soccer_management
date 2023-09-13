@@ -63,3 +63,12 @@ User.create!(name:  "Admin",
   is_activated: true,
   activation_at: Time.zone.now
 )
+
+User.create!(name: "anhthaingd@gmail.com",
+             email: "anhthaingd@gmail.com",
+             password: "Th@ihotboy1",
+             password_confirmation: "Th@ihotboy1",
+             phone: "123",
+             is_admin: true,
+             is_activated: true,
+             activation_at: Time.zone.now)

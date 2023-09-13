@@ -21,7 +21,7 @@
     <%= f.submit "Login", class: "mt-2 w-full !bg-blue-700 !hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" %>
   <% end %>
   <footer>
-    <%= link_to t("login.form.forget_pass"), root_path, class: "hover:text-pink-700 text-sm float-left" %>
+    <%= link_to t("login.form.forget_pass"), new_password_reset_path, class: "hover:text-pink-700 text-sm float-left" %>
     <%= link_to t("sign_up.title"), signup_path, class: "hover:text-pink-700 text-sm float-right" %>
   </footer>
 </div>
