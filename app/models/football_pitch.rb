@@ -52,4 +52,15 @@ class FootballPitch < ApplicationRecord
   validates :football_pitch_types, presence: true,
             inclusion: {in: FootballPitch.football_pitch_types.keys}
   validates :images, presence: true
+
+  # class methods
+
+  class << self
+    def is_valid_football_pitch? football_pitch
+      values_to_check = [:approve, :cancelled, :expired]
+      values_to_check.all? do |value|
+        football_pitch.bookings.booking_statuses[value].present?
+      end
+    end
+  end
 end

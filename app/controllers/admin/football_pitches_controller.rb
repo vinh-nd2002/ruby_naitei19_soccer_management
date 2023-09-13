@@ -1,6 +1,6 @@
 class Admin::FootballPitchesController < Admin::BaseController
   # callback
-  before_action :find_football_pitch_base_id, only: %i(edit update)
+  before_action :find_football_pitch_base_id, only: %i(edit update destroy)
 
   def index
     @football_pitches = FootballPitch.newest
@@ -28,6 +28,15 @@ class Admin::FootballPitchesController < Admin::BaseController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    if @football_pitch.destroy
+      flash[:success] = t("football_pitches.delete.success").capitalize
+    else
+      flash[:danger] = t("football_pitches.delete.failed").capitalize
+    end
+    redirect_to admin_football_pitches_path, status: :see_other
   end
 
   private

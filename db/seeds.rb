@@ -33,7 +33,7 @@ end
   password = "Abc12345@"
   password_confirmation = "Abc12345@"
   phone = Faker::PhoneNumber.phone_number
-  user = User.create!(
+  User.create!(
     name: name,
     email: email,
     password: password,
