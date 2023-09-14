@@ -1,20 +1,47 @@
 <div class="p-2 mx-10">
-  <h2 class="mb-4 text-4xl font-semibold leading-3"><%= t "bookings.title"%></h2>
+  <h2 class="mb-4 text-4xl font-semibold leading-3"><%= t "bookings.title" %></h2>
+  <%= render "search_booking_form" %>
+  <div class="flex gap-4">
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-yellow-500 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.pending" %></span>
+    </p>
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-green-600 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.approve" %></span>
+    </p>
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-red-600 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.reject" %></span>
+    </p>
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-red-400 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.expired" %></span>
+    </p>
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-blue-300 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.refunded" %></span>
+    </p>
+    <p class="flex items-center gap-2 font-bold">
+      <span class="bg-gray-300 w-6 h-5 block"></span>
+      <span><%= t "bookings.status_color.cancelled" %></span>
+    </p>
+  </div>
   <div class="overflow-x-auto">
     <table class="min-w-full">
       <thead class="bg-blue-500 text-white">
         <tr class="text-left">
-          <th class="p-3"><%= t "bookings.booked_by"%></th>
-          <th class="p-3"><%= t "bookings.contact"%></th>
-          <th class="p-3"><%= t "bookings.pitch_name"%></th>
-          <th class="p-3"><%= t "bookings.location"%></th>
-          <th class="p-3"><%= t "bookings.date"%></th>
-          <th class="p-3"><%= t "bookings.start_at"%></th>
-          <th class="p-3"><%= t "bookings.end_at"%></th>
-          <th class="p-3"><%= t "bookings.booking_price"%></th>
-          <th class="p-3"><%= t "bookings.booked_at"%></th>
-          <th class="p-3"><%= t "bookings.status"%></th>
-          <th class="p-3"><%= t "bookings.action"%></th>
+          <th class="p-3"><%= t "bookings.booked_by" %></th>
+          <th class="p-3"><%= t "bookings.contact" %></th>
+          <th class="p-3"><%= t "bookings.pitch_name" %></th>
+          <th class="p-3"><%= t "bookings.location" %></th>
+          <th class="p-3"><%= t "bookings.date" %></th>
+          <th class="p-3"><%= t "bookings.start_at" %></th>
+          <th class="p-3"><%= t "bookings.end_at" %></th>
+          <th class="p-3"><%= t "bookings.booking_price" %></th>
+          <th class="p-3"><%= t "bookings.booked_at" %></th>
+          <th class="p-3"><%= t "bookings.status" %></th>
+          <th class="p-3"><%= t "bookings.action" %></th>
         </tr>
       </thead>
       <tbody>

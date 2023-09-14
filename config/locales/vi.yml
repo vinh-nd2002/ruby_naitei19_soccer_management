@@ -182,6 +182,13 @@ vi:
     error: "Đã có lỗi xảy ra"
     success: "Cập nhật thành công"
     not_found: "Không tìm thấy đơn này"
+    status_color:
+      approve: "Chấp nhận"
+      pending: "Đang chờ"
+      reject: "Bị từ chối"
+      expired: "Đã hết hạn"
+      cancelled: "Đã hủy"
+      refunded: "Đã hoàn lại"
     approve:
       title: "Thông báo đơn đặt sân của bạn đã được chấp nhận"
       message: "Xin chúc mừng bạn, chúng tôi gửi đến bạn thông tin yêu cầu đặt lịch sân bóng của bạn đã được chấp nhận"

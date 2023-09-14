@@ -19,4 +19,16 @@ module ApplicationHelper
 
     object.errors.messages[field_name].join(", ")
   end
+
+  def render_booking_status_color status
+    status_classes = {
+      "pending" => "hover:bg-yellow-500",
+      "approve" => "hover:bg-green-600 hover:text-white",
+      "reject" => "hover:bg-red-600 hover:text-white",
+      "expired" => "hover:bg-red-400",
+      "refunded" => "hover:bg-blue-300",
+      "cancelled" => "hover:bg-gray-300"
+    }
+    status_classes[status]
+  end
 end

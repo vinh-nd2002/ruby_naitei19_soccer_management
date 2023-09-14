@@ -1,0 +1,16 @@
+<%= form_tag(admin_bookings_path, method: :get, class: "my-3 p-3 border rounded-md",id: "search_booking_form") do %>
+  <div class="flex gap-4">
+    <div class="flex flex-col flex-1">
+      <%= label_tag :booking_status, t("bookings.status") %>
+      <%= select_tag :booking_status, options_for_select(Booking.booking_statuses.keys.map {|status| status}, params[:booking_status]), include_blank: "none", onchange: "this.form.requestSubmit()" %>
+    </div>
+    <div class="flex flex-col flex-1">
+      <%= label_tag :start_at, t("bookings.date") %>
+      <%= date_field_tag :start_at, params[:start_at].presence, onchange: "this.form.requestSubmit()" %>
+    </div>
+    <div class="flex flex-col flex-1">
+      <%= label_tag :created_at, t("bookings.booked_at") %>
+      <%= date_field_tag :created_at, params[:created_at].presence, onchange: "this.form.requestSubmit()" %>
+    </div>
+  </div>
+<% end %>

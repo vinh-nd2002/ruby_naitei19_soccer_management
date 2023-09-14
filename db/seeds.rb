@@ -88,3 +88,18 @@ User.create!(name: "anhthaingd@gmail.com",
              is_admin: true,
              is_activated: true,
              activation_at: Time.zone.now)
+
+50.times do
+user_id = user_ids.sample
+football_pitch_id = football_pitch_ids.sample
+Booking.create!(
+  user_id: user_id,
+  football_pitch_id: football_pitch_id,
+  booking_price: (Faker::Number.between(from: 10, to: 99) * 10000),
+  start_at: Time.now + (Faker::Number.between(from: 0, to: 5).days),
+  end_at: Time.now + 1*60*60,
+  note: "Hàng dễ vỡ xin nhẹ tay",
+  booking_status: Faker::Number.between(from: 0, to: 5),
+  created_at: Time.now + (Faker::Number.between(from: 0, to: 5).days)
+)
+end
