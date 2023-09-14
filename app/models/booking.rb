@@ -10,6 +10,20 @@ class Booking < ApplicationRecord
 
   scope :newest, ->{order(created_at: :desc)}
 
+  scope :search_by_booking_status, (lambda {|status|
+    where(booking_status: status) if status.present?
+  })
+
+  scope :search_by_created_at, (lambda {|created_time|
+    date = Date.parse(created_time) if created_time.present?
+    where(created_at: date.beginning_of_day..date.end_of_day) if date.present?
+  })
+
+  scope :search_by_start_at, (lambda {|start_date|
+    date = Date.parse(start_date) if start_date.present?
+    where(start_at: date.beginning_of_day..date.end_of_day) if date.present?
+  })
+
   delegate :name, :phone, to: :user, prefix: true
   delegate :name, :location, to: :football_pitch, prefix: true
 end

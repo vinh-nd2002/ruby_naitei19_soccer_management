@@ -180,6 +180,13 @@ en:
     error: "Opps!!! Error"
     success: "Update successfully"
     not_found: "Not found"
+    status_color:
+      approve: "Approve"
+      pending: "Pending"
+      reject: "Reject"
+      expired: "Expired"
+      cancelled: "Cancelled"
+      refunded: "Refunded"
     approve:
       title: "Notification that your order has been accepted"
       message: "Congratulations, we are sending you information that your soccer field booking request has been accepted"
