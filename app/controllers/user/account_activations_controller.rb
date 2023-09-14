@@ -1,6 +1,11 @@
 class User::AccountActivationsController < User::BaseController
   def edit
     user = User.find_by(email: params[:email])
+    if user.created_at < Settings.activate.invalid_time.minutes.ago
+      User.delete_invalid_user user
+      flash[:warning] = t "activation.invalid_time"
+      return redirect_to root_path
+    end
     check_activation user
   end
 

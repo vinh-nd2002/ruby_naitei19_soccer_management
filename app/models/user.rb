@@ -42,6 +42,11 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    # Delete invalid user accounts
+    def delete_invalid_user user
+      user.delete
+    end
   end
 
   def remember

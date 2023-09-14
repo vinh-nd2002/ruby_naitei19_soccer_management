@@ -17,3 +17,5 @@ users:
 time_zone: "Central Time (US & Canada)"
 bookings:
   per_page: 15
+activate:
+  invalid_time: 30

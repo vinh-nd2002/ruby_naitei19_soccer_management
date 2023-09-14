@@ -147,6 +147,7 @@ en:
     subject: "Account activation"
     welcome: "Hi %{name}! Click on the link below to activate your account"
     active: "Activate"
+    invalid_time: "Invalid time to active"
   password_reset:
     title: "Reset password"
     forgot: "Forgot password"

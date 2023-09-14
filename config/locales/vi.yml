@@ -148,6 +148,7 @@ vi:
     subject: "Kích hoạt tài khoản"
     welcome: "Xin chào %{name}! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn"
     active: "Kích hoạt"
+    invalid_time: "Invalid time to active"
   password_reset:
     title: "Đặt lại mật khẩu"
     forgot: "Quên mật khẩu"
