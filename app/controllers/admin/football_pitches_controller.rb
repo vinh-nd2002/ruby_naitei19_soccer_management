@@ -1,6 +1,6 @@
 class Admin::FootballPitchesController < Admin::BaseController
   # callback
-  before_action :find_football_pitch_base_id, only: %i(edit update destroy)
+  before_action :find_football_pitch_base_id, only: %i(edit update destroy show)
 
   def index
     @football_pitches = FootballPitch.newest
@@ -8,6 +8,12 @@ class Admin::FootballPitchesController < Admin::BaseController
 
   def new
     @football_pitch = FootballPitch.new
+  end
+
+  def show
+    return if @football_pitch
+
+    redirect_to admin_football_pitches_path
   end
 
   def create
