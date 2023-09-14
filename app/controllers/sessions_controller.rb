@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   private
   def check_save user
     if user&.authenticate(params[:session][:password])
-      check_activated user
+      handle_successful_login user
     else
       handle_failed_login
     end
@@ -27,18 +27,28 @@ class SessionsController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 
-  def check_activated user
+  def handle_successful_login user
     if user.is_activated?
-      forwarding_url = session[:forwarding_url]
-      reset_session
-      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      log_in user
-      redirect_to forwarding_url || root_url
+      handle_activated user
     else
-      message  = t "activation.not_actived"
-      message += t "activation.check_mail"
-      flash[:warning] = message
-      redirect_to root_url
+      handle_not_activate
     end
+  end
+
+  def handle_activated user
+    forwarding_url = session[:forwarding_url]
+    reset_session
+    params[:session][:remember_me] == "1" ? remember(user) : forget(user)
+    log_in(user)
+    redirect_to admin_path and return if admin?
+
+    redirect_to forwarding_url || root_url
+  end
+
+  def handle_not_activate
+    message = t "activation.not_actived"
+    message += t "activation.check_mail"
+    flash[:warning] = message
+    redirect_to root_url
   end
 end

@@ -15,3 +15,5 @@ users:
   avatar_size: 80
   max_text: 200
 time_zone: "Central Time (US & Canada)"
+bookings:
+  per_page: 15

@@ -76,6 +76,14 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def send_approve_booking_email
+    UserMailer.approve_booking(self).deliver_now
+  end
+
+  def send_reject_booking_email
+    UserMailer.reject_booking(self).deliver_now
+  end
+
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token

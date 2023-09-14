@@ -1,0 +1,40 @@
+<tr class="duration-300 transition-all border-b border-opacity-20 hover:bg-gray-300 cursor-pointer">
+  <td class="p-3">
+    <p class="mb-0"><%= booking.user_name %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.user_phone %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.football_pitch_name %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.football_pitch_location %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.start_at.strftime("%F") %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.start_at.strftime("%H:%M %p") %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.end_at.strftime("%H:%M %p") %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= number_to_currency(booking.booking_price) %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= booking.created_at.strftime("%F") %></p>
+  </td>
+  <td class="p-3">
+    <%= form_for booking, url: admin_booking_path(booking) do |f| %>
+      <%= f.select :booking_status, Booking.booking_statuses.keys.map {|status| status}, {selected: f.object.booking_status}, onchange: "this.form.requestSubmit()" %>
+    <% end %>
+  </td>
+  <td class="p-3">
+    <div class="flex items-center gap-5">
+      <i class="cursor-pointer fa-solid fa-eye"></i>
+      <i class="cursor-pointer fa-solid fa-trash text-red-500"></i>
+    </div>
+  </td>
+</tr>

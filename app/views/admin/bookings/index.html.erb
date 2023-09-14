@@ -1,0 +1,66 @@
+<div class="p-2 mx-10">
+  <h2 class="mb-4 text-4xl font-semibold leading-3"><%= t "bookings.title"%></h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead class="bg-blue-500 text-white">
+        <tr class="text-left">
+          <th class="p-3"><%= t "bookings.booked_by"%></th>
+          <th class="p-3"><%= t "bookings.contact"%></th>
+          <th class="p-3"><%= t "bookings.pitch_name"%></th>
+          <th class="p-3"><%= t "bookings.location"%></th>
+          <th class="p-3"><%= t "bookings.date"%></th>
+          <th class="p-3"><%= t "bookings.start_at"%></th>
+          <th class="p-3"><%= t "bookings.end_at"%></th>
+          <th class="p-3"><%= t "bookings.booking_price"%></th>
+          <th class="p-3"><%= t "bookings.booked_at"%></th>
+          <th class="p-3"><%= t "bookings.status"%></th>
+          <th class="p-3"><%= t "bookings.action"%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%if @bookings.present?%>
+          <%= render @bookings%>
+        <% else %>
+          <tr class="duration-500 transition-all border-b border-opacity-20 hover:bg-blue-100 cursor-pointer">
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+            <td class="p-3">
+              <p class="mb-0">N/A</p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center items-center my-10">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>
