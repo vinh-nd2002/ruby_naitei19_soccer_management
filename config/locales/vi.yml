@@ -98,10 +98,32 @@ vi:
         description: "Miêu tả"
         previous: "Trước"
         next: "Sau"
+    change_info: "Change user's information"
+    hello: "Xin chào, %{name}"
+    update:
+      basic_info:
+        success: "Cập nhật thông tin cơ bản của người dùng thành công"
+        failed: "Cập nhật thông tin cơ bản của người dùng thất bại"
+        form:
+          name: "Tên"
+          phone: "Số điện thoại"
+      change_password:
+        success: "Mật khẩu đã được cập nhật thành công"
+        failed: "Mật khẩu hiện tại không đúng"
+        form:
+          current_password: "Mật khẩu hiện tại"
+          new_password: "Mật khẩu mới"
+          password_confirmation: "Xác thực mật khẩu"
+      users:
+        title: "Chỉnh sửa thông tin người dùng"
+        basic_information: "Chỉnh sửa thông tin cơ bản của người dùng"
+        change_password: "Thay đổi mật khẩu"
+      submit: "Thay đổi thông tin"
   login:
     title: "Đăng nhập"
     remember_me: "Nhớ đăng nhập"
     failed: "Email/mật khẩu không hợp lệ"
+    success: "Đăng nhập thành công"
     form:
       email: "Email"
       password: "Mật khẩu"

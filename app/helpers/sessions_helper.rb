@@ -36,6 +36,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  # Stores the URL trying to be accessed.
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
   # Logs out the current user.
   def log_out
     forget(current_user)
@@ -45,9 +50,5 @@ module SessionsHelper
 
   def admin?
     current_user&.is_admin
-  end
-
-  def store_location
-    session[:following_url] = request.original_url if request.get?
   end
 end
