@@ -163,6 +163,7 @@ en:
       failed: "Find football pitch failed"
   side_bar:
     create_pitch: "Create new football pitch"
+    booked_pitch: "Manage Reserved Field"
     user_manage: "User manager"
     booked_pitch: "Manage Reserved Field"
   activation:
@@ -245,3 +246,10 @@ en:
       status: "Status"
       placeholder: "Search ...."
       book_pitch: "Book a football pitch"
+  reviews:
+    title: "Reviews"
+    posted: "Posted %{time} ago."
+    success: "Successfully"
+    failed: "Failed"
+    comment: "Comment"
+    rating: "Rating"

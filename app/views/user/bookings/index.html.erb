@@ -1,33 +1,24 @@
 <div class="container-xl pt-5">
   <div class="bg-white p-8 rounded-md w-full">
-    <div class=" flex items-center justify-between pb-6">
-      <div>
-        <h2 class="text-gray-600 font-semibold"><%= t "booking.list.title" %></h2>
-      </div>
-      <div class="flex items-center justify-between">
-        <%= render "user/bookings/components/search_booking_pitch_form" %>
-        <div class="lg:ml-40 ml-10 space-x-8">
-          <%= link_to t("booking.list.book_pitch"), root_path, class: "bg-blue-500 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer custom-link" %>
-        </div>
-      </div>
+    <h2 class="text-gray-600 font-semibold"><%= t "booking.list.title" %></h2>
+    <div class="flex items-center justify-between">
+      <%= render "user/bookings/components/search_booking_pitch_form" %>
     </div>
     <div>
-      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+      <div class="shadow my-2 overflow-x-auto">
         <div class="inline-block min-w-full shadow rounded-lg overflow-hidden w-full">
           <table class="min-w-full leading-normal w-full">
             <thead>
-            <tr>
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"><%= t "booking.list.football_pitch_name" %></th>
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"><%= t "booking.list.booking_price" %></th>
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"><%= t "booking.list.booking_note" %></th>
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"><%= t "booking.list.created_at" %></th>
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"><%= t "booking.list.status" %></th>
+            <tr class="border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th class="px-5 py-3"><%= t "booking.list.football_pitch_name" %></th>
+              <th class="px-5 py-3"><%= t "booking.list.booking_price" %></th>
+              <th class="px-5 py-3"><%= t "booking.list.booking_note" %></th>
+              <th class="px-5 py-3"><%= t "booking.list.created_at" %></th>
+              <th class="px-5 py-3"><%= t "booking.list.status" %></th>
             </tr>
             </thead>
             <tbody>
-            <tr>
               <%= render partial: "user/bookings/components/booking_pitch_item", collection: @booking_football_pitches, as: :booking_football_pitch %>
-            </tr>
             </tbody>
           </table>
           <div class="flex justify-center items-center my-5">

@@ -12,10 +12,12 @@ class User::BookingsController < User::BaseController
 
   def new
     @booking = Booking.new
-    @booking.user_name = current_user.name
-    @booking.phone = current_user.phone
-    @booking.football_pitch_n = @football_pitch.name
-    @booking.price = @football_pitch.price
+    @booking.assign_attributes(
+      user_name: current_user.name,
+      phone: current_user.phone,
+      football_pitch_n: @football_pitch.name,
+      price: @football_pitch.price
+    )
   end
 
   def edit; end
@@ -58,7 +60,7 @@ class User::BookingsController < User::BaseController
   end
 
   def current_user_booking_pitches
-    @booking_football_pitches = Booking.where id: current_user.id
+    @booking_football_pitches = current_user.bookings
     return if @booking_football_pitches
 
     flash[:error] = t "football_pitches.find_pitch_failed"

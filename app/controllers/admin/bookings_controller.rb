@@ -33,14 +33,10 @@ class Admin::BookingsController < Admin::BaseController
     created_at = format_date params[:created_at]
     booking_status = params[:booking_status]
 
-    @bookings = if start_at.blank? && created_at.blank? && booking_status.blank?
-                  Booking.newest
-                else
-                  Booking.search_by_booking_status(booking_status)
-                         .search_by_start_at(start_at)
-                         .search_by_created_at(created_at)
-                         .newest
-                end
+    @bookings = Booking.search_by_booking_status(booking_status)
+                       .search_by_start_at(start_at)
+                       .search_by_created_at(created_at)
+                       .newest
   end
 
   def format_date string

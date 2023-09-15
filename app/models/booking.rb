@@ -4,8 +4,6 @@ class Booking < ApplicationRecord
                         expired: 4, refunded: 5}, _prefix: :is
   attr_accessor :user_name, :phone, :football_pitch_n, :price
 
-  validates :start_at, :end_at, presence: true
-  validate :start_at_must_be_before_end_at
   UPDATE_ATTRS = [
     :user_id, :football_pitch_id, :discount_id,
     :booking_price, :start_at, :end_at, :price,
@@ -22,8 +20,9 @@ class Booking < ApplicationRecord
     where(booking_status: status) if status.present?
   })
 
-  scope :search_by_booked_pitch_name, lambda {|booked_pitch_name|
-    joins(:user).where(users: {name: booked_pitch_name})
+  scope :search_by_booked_pitch_name, lambda {|pitch_name|
+    joins(:football_pitch)
+      .where("football_pitches.name LIKE ?", "%#{pitch_name}%")
   }
 
   scope :search_by_created_at, (lambda {|date|

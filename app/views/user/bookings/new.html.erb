@@ -1,17 +1,17 @@
 <div class="flex items-center justify-center min-h-screen mt-4">
     <%= render "shared/error_messages", object: @booking %>
-    <%= form_with(model: @booking, url: bookings_path, method: :post, class: "bg-white p-8 rounded shadow-md") do |form| %>
+    <%= form_with(model: @booking, url: bookings_path, method: :post, class: "bg-white p-8 rounded shadow-md", html: { id: "booking-form" }) do |form| %>
       <%= hidden_field_tag :football_pitch_id, @football_pitch.id %>
       <div class="mb-4">
         <%= form.label :user_name, t("booking.form.user_name"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
         <%= form.text_field :user_name, value: current_user.name, readonly: true, class: "border rounded py-2 px-3 w-100" %>
       </div>
-      
-      <div class="mb-4">  
+
+      <div class="mb-4">
         <%= form.label :phone, t("booking.form.phone"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
         <%= form.text_field :phone, value: @booking.phone, readonly: true, class: "border rounded py-2 px-3 w-100" %>
       </div>
-      
+
       <div class="mb-4">
         <%= form.label :football_pitch_name, t("booking.form.football_pitch_name"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
         <%= form.text_field :football_pitch_name, value: @booking.football_pitch_n, readonly: true, class: "border rounded py-2 px-3 w-100" %>

@@ -1,0 +1,16 @@
+<div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border shadow overflow-auto z-20 p-5 bg-white rounded">
+  <h3><%= t "reviews.comment" %> <%= football_pitch.name %></h3>
+  <%= form_for :review, url: reviews_path, method: :post do |form| %>
+    <div class="flex flex-col">
+      <%= form.label :comment, t("reviews.comment") %>
+      <%= form.text_area :comment, class: "form-control" %>
+    </div>
+  <div class="flex flex-col">
+    <%= form.label :rating, t("reviews.rating") %>
+    <%= form.select :rating, ["5", "4", "3", "2", "1"], {}, class: "form-control" %>
+  </div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.hidden_field :football_pitch_id, value: football_pitch.id %>
+    <%= form.submit "Create Review", class: "w-full p-2 text-white font-bold !bg-blue-500 rounded my-2" %>
+  <% end %>
+</div>
