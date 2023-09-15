@@ -49,6 +49,10 @@ class User < ApplicationRecord
     def delete_invalid_user user
       user.delete
     end
+
+    def admin
+      User.where(is_admin: true)
+    end
   end
 
   def remember

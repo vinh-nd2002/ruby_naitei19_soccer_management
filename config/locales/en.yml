@@ -163,7 +163,6 @@ en:
       failed: "Find football pitch failed"
   side_bar:
     create_pitch: "Create new football pitch"
-    booked_pitch: "Manage Reserved Field"
     user_manage: "User manager"
     booked_pitch: "Manage Reserved Field"
   activation:
@@ -262,3 +261,7 @@ en:
     failed: "Failed"
     comment: "Comment"
     rating: "Rating"
+  system:
+    monthly_revenue:
+      subject: "Monthly Revenue Report"
+      title: "Monthly revenue statistics"
