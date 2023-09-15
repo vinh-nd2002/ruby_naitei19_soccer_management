@@ -119,6 +119,7 @@ en:
         change_password: "Change password"
       submit: "Change information"
   login:
+    need_login: "You need login to continue."
     title: "Login"
     remember_me: "Remember me"
     failed: "Invalid email/password combination"
@@ -194,3 +195,17 @@ en:
     reject:
       title: "Notification that your order has been rejected"
       message: "Sorry, we sent you information that your soccer field booking request has been rejected for some reason."
+  booking:
+    success: "Booking success"
+    failed: "Booking failed"
+    duplicate: "The pitch has been set for this period."
+    form: 
+      user_name: "User name"
+      phone: "Phone"
+      football_pitch_name: "Football pitch name"
+      price: "Price/hour"
+      start: "Start time"
+      end: "End time"
+      total: "Total cost (dong)"
+      submit: "Order confirmation"
+      cancel: "Cancel"

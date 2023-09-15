@@ -1,0 +1,45 @@
+<div class="flex items-center justify-center min-h-screen mt-4">
+    <%= render "shared/error_messages", object: @booking %>
+    <%= form_with(model: @booking, url: bookings_path, method: :post, class: "bg-white p-8 rounded shadow-md") do |form| %>
+      <%= hidden_field_tag :football_pitch_id, @football_pitch.id %>
+      <div class="mb-4">
+        <%= form.label :user_name, t("booking.form.user_name"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.text_field :user_name, value: current_user.name, readonly: true, class: "border rounded py-2 px-3 w-100" %>
+      </div>
+      
+      <div class="mb-4">  
+        <%= form.label :phone, t("booking.form.phone"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.text_field :phone, value: @booking.phone, readonly: true, class: "border rounded py-2 px-3 w-100" %>
+      </div>
+      
+      <div class="mb-4">
+        <%= form.label :football_pitch_name, t("booking.form.football_pitch_name"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.text_field :football_pitch_name, value: @booking.football_pitch_n, readonly: true, class: "border rounded py-2 px-3 w-100" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :price, t("booking.form.price"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.text_field :price, value: @booking.price, readonly: true, class: "border rounded py-2 px-3 w-100",id: "booking_price_per_hour" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :start_at, t("booking.form.start"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.datetime_field :start_at, class: "border rounded py-2 px-3 w-100" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :end_at, t("booking.form.end"), class: "block text-gray-700 text-sm font-bold mb-2 w-2/3" %>
+        <%= form.datetime_field :end_at, class: "border rounded py-2 px-3 w-100" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :booking_price, t("booking.form.total"), class: "mb-0 text-red" %>
+        <%= form.text_field :booking_price, readonly: true, class: "w-full p-2 border rounded-md", id: "booking_booking_price" %>
+      </div>
+
+      <div class="mt-6 mb-4 items-center justify-center w-100 flex">
+        <%= form.submit t("booking.form.submit"), class: "px-4 mr-2 py-2 !bg-indigo-500 text-white rounded-md hover:bg-indigo-900 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-50" %>
+        <%= link_to t("booking.form.cancel"), root_path, class: "px-4 py-2 !bg-blue-500 text-white rounded-md " %>
+      </div>
+    <% end %>
+</div>

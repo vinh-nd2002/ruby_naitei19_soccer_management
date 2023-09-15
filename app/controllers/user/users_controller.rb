@@ -64,4 +64,12 @@ class User::UsersController < User::BaseController
 
     redirect_to root_url, status: :see_other
   end
+
+  def show
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.not_found"
+    redirect_to root_path
+  end
 end

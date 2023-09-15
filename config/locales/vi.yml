@@ -120,6 +120,7 @@ vi:
         change_password: "Thay đổi mật khẩu"
       submit: "Thay đổi thông tin"
   login:
+    need_login: "Bạn cần đăng nhập để tiếp tục."
     title: "Đăng nhập"
     remember_me: "Nhớ đăng nhập"
     failed: "Email/mật khẩu không hợp lệ"
@@ -195,3 +196,17 @@ vi:
     reject:
       title: "Thông báo đơn đặt sân của bạn đã bị từ chối"
       message: "Xin lỗi bạn, chúng tôi gửi đến bạn thông tin yêu cầu đặt lịch sân bóng của bạn đã bị từ chối vì một số lý do"
+  booking:
+    success: "Đặt thành công"
+    failed: "Có lỗi xảy ra khi đặt hàng."
+    duplicate: "Sân đã được đặt trong khoảng thời gian này."
+    form: 
+      user_name: "Tên tài khoản"
+      phone: "Điện thoại"
+      football_pitch_name: "Tên sân bóng đá"
+      price: "Giá/giờ"
+      start: "Thời gian bắt đầu"
+      end: "Thời gian kết thúc"
+      total: "Tổng chi phí (đồng)"
+      submit: "Xác nhận đơn hàng"
+      cancel: "Hủy bỏ"
