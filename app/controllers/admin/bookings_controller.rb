@@ -2,7 +2,7 @@ class Admin::BookingsController < Admin::BaseController
   before_action :load_booking, only: %i(update)
 
   def index
-    @bookings = Booking.newest
+    search_bookings
     @pagy, @bookings = pagy @bookings,
                             items: Settings.bookings.per_page
   end
@@ -28,7 +28,26 @@ class Admin::BookingsController < Admin::BaseController
     redirect_to admin_bookings_path
   end
 
+  def search_bookings
+    start_at = format_date params[:start_at]
+    created_at = format_date params[:created_at]
+    booking_status = params[:booking_status]
+
+    @bookings = if start_at.blank? && created_at.blank? && booking_status.blank?
+                  Booking.newest
+                else
+                  Booking.search_by_booking_status(booking_status)
+                         .search_by_start_at(start_at)
+                         .search_by_created_at(created_at)
+                         .newest
+                end
+  end
+
+  def format_date string
+    Date.parse(string) if string.present?
+  end
+
   def booking_params
-    params.require(:booking).permit(:date, :booking_status, :football_pitch_id)
+    params.require(:booking).permit(:booking_status)
   end
 end

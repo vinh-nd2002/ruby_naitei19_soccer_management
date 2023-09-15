@@ -1,4 +1,4 @@
-<tr class="duration-300 transition-all border-b border-opacity-20 hover:bg-gray-300 cursor-pointer">
+<tr class="border-b cursor-pointer border-gray-400 <%= render_booking_status_color(booking.booking_status)%>">
   <td class="p-3">
     <p class="mb-0"><%= booking.user_name %></p>
   </td>
@@ -28,12 +28,12 @@
   </td>
   <td class="p-3">
     <%= form_for booking, url: admin_booking_path(booking) do |f| %>
-      <%= f.select :booking_status, Booking.booking_statuses.keys.map {|status| status}, {selected: f.object.booking_status}, onchange: "this.form.requestSubmit()" %>
+      <%= f.select :booking_status, Booking.booking_statuses.keys.map {|status| status}, {selected: f.object.booking_status}, onchange: "this.form.requestSubmit()", class: "text-black" %>
     <% end %>
   </td>
   <td class="p-3">
     <div class="flex items-center gap-5">
-      <i class="cursor-pointer fa-solid fa-eye"></i>
+      <i class="cursor-pointer fa-solid fa-eye text-black"></i>
       <i class="cursor-pointer fa-solid fa-trash text-red-500"></i>
     </div>
   </td>
