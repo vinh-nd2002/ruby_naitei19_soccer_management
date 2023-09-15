@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_08_030853) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_12_031904) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -51,9 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_030853) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["discount_id"], name: "index_bookings_on_discount_id", unique: true
-    t.index ["football_pitch_id"], name: "index_bookings_on_football_pitch_id", unique: true
-    t.index ["user_id"], name: "index_bookings_on_user_id", unique: true
+    t.index ["football_pitch_id"], name: "index_bookings_on_football_pitch_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "discounts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

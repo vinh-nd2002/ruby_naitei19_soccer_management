@@ -17,7 +17,7 @@
         </span>
       </h6>
       <button class="flex items-center gap-2 justify-center px-3 py-2 font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-700 shadow">
-        <span><%= t "football_pitch.booking" %></span>
+        <%=link_to t("football_pitch.booking"),new_booking_path(football_pitch_id: football_pitch.id) %>
         <i class="fa-solid fa-phone-flip"></i>
       </button>
     </div>
