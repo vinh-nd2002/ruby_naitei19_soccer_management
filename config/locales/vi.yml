@@ -78,14 +78,22 @@ vi:
       error_message: "Biểu mẫu chứa %{message}."
       error: "lỗi"
   users:
+    edit:
+      title: "Chỉnh sửa hồ sơ"
     create:
       success: "Tạo thành công"
     not_found: "Không tìm thấy"
     profile: "Hồ sơ"
     settings: "Cài đặt"
+    change_info: "Thay đổi thông tin người dùng"
     logout: "Đăng xuất"
     favorite_pitches: "Sân yêu thích"
     hello: "Xin chào, %{name}"
+    delete:
+      success: "Người dùng đã xóa"
+      failed: "Xóa người dùng không thành công"
+      sure: "Bạn có chắc không?"
+      not_found: "Không tìm thấy người dùng để xóa"
     static_pages:
       show:
         title: "Danh sách sân bóng đá"
@@ -98,8 +106,6 @@ vi:
         description: "Miêu tả"
         previous: "Trước"
         next: "Sau"
-    change_info: "Change user's information"
-    hello: "Xin chào, %{name}"
     update:
       basic_info:
         success: "Cập nhật thông tin cơ bản của người dùng thành công"
@@ -134,12 +140,23 @@ vi:
     title: "Trang chủ"
   admin:
     forbidden: "Bạn không có quyền truy cập trang này."
+    back: "Quay lại"
+    users:
+      name: "Tên"
+      email: "Email"
+      phone: "Điện thoại"
+      is_actived: "Đã được kích hoạt"
+      created_at: "Ngày tạo"
+      action: "Hành động"
+      bio: "Bio"
+      description: "John is a software engineer with over 10 years of experience in developing web and mobile applications. He is skilled in JavaScript, React, and Node.js."
   static_pages:
     find_football_pitch:
       success: "Find thành công"
       failed: "Find thất bại"
   side_bar:
     create_pitch: "Tạo sân bóng mới"
+    user_manage: "Quản lý user"
   activation:
     success: "Tài khoản đã được kích hoạt!"
     invalid_link: "Liên kết kích hoạt không hợp lệ"
@@ -199,6 +216,7 @@ vi:
   booking:
     success: "Đặt thành công"
     failed: "Có lỗi xảy ra khi đặt hàng."
+    need_before: "phải trước end_at"
     duplicate: "Sân đã được đặt trong khoảng thời gian này."
     form: 
       user_name: "Tên tài khoản"

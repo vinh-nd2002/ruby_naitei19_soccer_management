@@ -78,6 +78,8 @@ en:
       error_message: "The form contains %{message}."
       error: "error"
   users:
+    edit:
+      title: "Edit Profile"
     create:
       success: "Create success"
     not_found: "Not found"
@@ -87,6 +89,11 @@ en:
     logout: "Log out"
     favorite_pitches: "Favorite pitches"
     hello: "Hello, %{name}"
+    delete:
+      success: "User deleted"
+      failed: "Delete user failed"
+      sure: "You sure?"
+      not_found: "Not found user to delete"
     static_pages:
       show:
         title: "Football pitch detail"
@@ -133,12 +140,23 @@ en:
     title: "Home"
   admin:
     forbidden: "You do not have permission to access this page"
+    back: "Back"
+    users:
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      is_actived: "Is_actived"
+      created_at: "Created_at"
+      action: "Action"
+      bio: "Bio"
+      description: "John is a software engineer with over 10 years of experience in developing web and mobile applications. He is skilled in JavaScript, React, and Node.js."
   static_pages:
     find_football_pitch:
       success: "Find football pitch success"
       failed: "Find football pitch failed"
   side_bar:
     create_pitch: "Create new football pitch"
+    user_manage: "User manager"
   activation:
     success: "Account activated!"
     invalid_link: "Invalid activation link"
@@ -198,6 +216,7 @@ en:
   booking:
     success: "Booking success"
     failed: "Booking failed"
+    need_before: "must be before end_at"
     duplicate: "The pitch has been set for this period."
     form: 
       user_name: "User name"

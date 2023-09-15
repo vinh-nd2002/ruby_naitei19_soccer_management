@@ -1,0 +1,46 @@
+<div class="p-2 mx-10">
+  <h2 class="mb-4 text-4xl font-semibold leading-3">Quản lý user</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead class="bg-blue-500 text-white">
+        <tr class="text-left">
+        <th class="p-3"><%= t("admin.users.name") %></th>
+        <th class="p-3"><%= t("admin.users.email") %></th>
+        <th class="p-3"><%= t("admin.users.phone") %></th>
+        <th class="p-3"><%= t("admin.users.is_actived") %></th>
+        <th class="p-3"><%= t("admin.users.created_at") %></th>
+        <th class="p-3"><%= t("admin.users.action") %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% if @users.present? %>
+        <%= render @users %>
+      <% else %>
+        <tr class="duration-500 transition-all border-b border-opacity-20 hover:bg-blue-100 cursor-pointer">
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        <td class="p-3">
+          <p class="mb-0">N/A</p>
+        </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center items-center my-10">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

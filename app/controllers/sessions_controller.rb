@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def handle_failed_login
-    flash.now[:danger] = t("login.failed")
+    flash[:danger] = t("login.failed")
     render :new, status: :unprocessable_entity
   end
 

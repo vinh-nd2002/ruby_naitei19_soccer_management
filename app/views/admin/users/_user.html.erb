@@ -1,0 +1,29 @@
+<tr class="duration-300 transition-all border-b border-opacity-20 hover:bg-gray-300 cursor-pointer">
+  <td class="p-3">
+    <p class="mb-0"><%= user.name %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= user.email %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= user.phone %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= user.is_activated %></p>
+  </td>
+  <td class="p-3">
+    <p class="mb-0"><%= user.created_at.strftime(Settings.date_format)%></p>
+  </td>
+  <td class="p-3">
+    <div class="flex items-center gap-5">
+      <%= link_to admin_user_path(user) do %>
+        <i class="cursor-pointer fa-solid fa-eye"></i>
+      <% end %>
+      <% delete_data = { "turbo-method": :delete, turbo_confirm: t("users.delete.sure") } %>
+
+      <%= link_to admin_user_path(user), data: delete_data do %>
+        <i class="cursor-pointer fa-solid fa-trash text-red-500"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

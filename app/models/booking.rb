@@ -4,6 +4,8 @@ class Booking < ApplicationRecord
                         expired: 4, refunded: 5}, _prefix: :is
   attr_accessor :user_name, :phone, :football_pitch_n, :price
 
+  validates :start_at, :end_at, presence: true
+  validate :start_at_must_be_before_end_at
   UPDATE_ATTRS = [
     :user_id, :football_pitch_id, :discount_id,
     :booking_price, :start_at, :end_at, :price,
@@ -13,9 +15,6 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :football_pitch
   belongs_to :discount, optional: true
-
-  validates :start_at, presence: true
-  validates :end_at, presence: true
 
   scope :newest, ->{order(created_at: :desc)}
 
@@ -42,5 +41,11 @@ class Booking < ApplicationRecord
       end
     end
     false
+  end
+
+  def start_at_must_be_before_end_at
+    return unless start_at.present? && end_at.present? && start_at >= end_at
+
+    errors.add(:start_at, t("booking.need_before"))
   end
 end

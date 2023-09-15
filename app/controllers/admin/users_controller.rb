@@ -1,7 +1,26 @@
-class UsersController < ApplicationController
-  layout "layouts/application_user"
+class Admin::UsersController < Admin::BaseController
   def new
     @user = User.new
+  end
+
+  def index
+    @users = User.non_admin
+    @pagy, @users = pagy(@users, items: Settings.users.per_page)
+  end
+
+  def destroy
+    begin
+      user = User.find(params[:id])
+      if user.destroy
+        flash[:success] = t("users.delete.success")
+      else
+        flash[:danger] = t("users.delete.failed")
+      end
+    rescue ActiveRecord::RecordNotFound
+      flash[:danger] = t("users.delete.not_found")
+    end
+
+    redirect_to admin_users_path, status: :see_other
   end
 
   def create
