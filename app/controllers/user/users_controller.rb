@@ -1,6 +1,6 @@
 class User::UsersController < User::BaseController
   before_action :logged_in_user, :find_user, :correct_user,
-                only: %i(edit update update_password)
+                only: %i(edit update update_password show)
   before_action :authenticate_current_password, only: :update_password
   def edit; end
 

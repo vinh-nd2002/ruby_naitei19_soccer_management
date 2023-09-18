@@ -19,6 +19,8 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
 
+  scope :non_admin, ->{where(is_admin: nil)}
+
   # association
   has_many :favorite_pitches, dependent: :destroy
   has_many :football_pitches, through: :favorite_pitches,
