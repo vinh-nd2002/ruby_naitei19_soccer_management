@@ -12,6 +12,13 @@ en:
     price: "%{price}/h"
     booking: "Booking"
     not_found: "Not found"
+    favorite:
+      like: "Add to favorites"
+      unlike: "Remove from favorites"
+      added: "Added"
+      failed: "Add failed"
+      removed: "Removed"
+      remove_failed: "Removed failed"
     search_form:
       name: "Football field's name"
       placeholder_name: "Please enter football field's name"

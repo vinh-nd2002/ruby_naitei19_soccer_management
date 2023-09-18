@@ -3,7 +3,25 @@
     <img class="rounded-t-lg" src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" alt="" />
   </div>
   <div class="p-3 text-sm">
-    <%= link_to football_pitch.name, static_page_path(football_pitch), class: "mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-base" %>
+    <div class="flex justify-end">
+      <% if logged_in? %>
+      <div id="favorite-actions">
+        <% if current_user.favorite?(football_pitch) %>
+          <%= form_for football_pitch, url: favorite_pitch_path(football_pitch), method: :delete, remote: true, html: { class: 'd-inline' } do |f| %>
+            <div><%= hidden_field_tag :football_pitch_id, football_pitch.id %></div>
+            <%= f.submit t("football_pitch.favorite.unlike"), class: "btn btn-danger" %>
+          <% end %>
+        <% else %>
+          <%= form_for FavoritePitch.new(football_pitch_id: football_pitch.id), url: favorite_pitches_path, method: :post, remote: true, html: { class: 'd-inline' } do |f| %>
+            <div><%= hidden_field_tag :football_pitch_id, football_pitch.id %></div>
+            <%= f.submit t("football_pitch.favorite.like"), class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>
+  <% end %>
+  
+    </div>
+    <%= link_to football_pitch.name, static_page_path(football_pitch), class: "mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-base text-decoration-none" %>
     <div class="flex justify-between items-center mb-3">
       <p class="mb-0"><%= t("football_pitch.capacity", capacity: football_pitch.capacity) %></p>
       <div class="flex gap-1 items-center text-orange-500">
@@ -17,7 +35,7 @@
         </span>
       </h6>
       <button class="flex items-center gap-2 justify-center px-3 py-2 font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-700 shadow">
-        <%=link_to t("football_pitch.booking"),new_booking_path(football_pitch_id: football_pitch.id) %>
+        <%= link_to t("football_pitch.booking"), new_booking_path(football_pitch_id: football_pitch.id), class: "text-white text-decoration-none" %>
         <i class="fa-solid fa-phone-flip"></i>
       </button>
     </div>

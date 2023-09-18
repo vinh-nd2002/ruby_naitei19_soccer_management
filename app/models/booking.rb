@@ -50,6 +50,6 @@ class Booking < ApplicationRecord
   def start_at_must_be_before_end_at
     return unless start_at.present? && end_at.present? && start_at >= end_at
 
-    errors.add(:start_at, t("booking.need_before"))
+    errors.add(:start_at, I18n.t("booking.need_before"))
   end
 end

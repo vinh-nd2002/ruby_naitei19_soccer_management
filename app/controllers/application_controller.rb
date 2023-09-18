@@ -35,4 +35,12 @@ class ApplicationController < ActionController::Base
     store_location
     redirect_to login_path
   end
+
+  def load_football_pitch
+    @football_pitch = FootballPitch.find_by(id: params[:football_pitch_id])
+    return if @football_pitch
+
+    flash[:error] = t("football_pitch.not_found")
+    redirect_to root_path
+  end
 end

@@ -107,6 +107,11 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_digest_at < 2.hours.ago
   end
+
+  def favorite? football_pitch
+    football_pitches.exists?(id: football_pitch.id)
+  end
+
   private
   def downcase_email!
     email.downcase!
