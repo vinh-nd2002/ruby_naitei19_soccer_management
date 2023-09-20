@@ -195,6 +195,7 @@ en:
     more_info: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
   bookings:
     title: "Bookings management"
+    description: "Personal details and booking detail."
     booked_by: "Booked by"
     contact: "Contact"
     pitch_name: "Pitch Name"
@@ -246,6 +247,14 @@ en:
       status: "Status"
       placeholder: "Search ...."
       book_pitch: "Book a football pitch"
+    delete:
+      success: "Delete successfully"
+      failed: "Delete failed"
+    modal:
+      title: "Delete booking"
+      description: "Are you sure want to delete booking's order"
+      yes: "Yes"
+      cancel: "Cancel"
   reviews:
     title: "Reviews"
     posted: "Posted %{time} ago."

@@ -196,6 +196,7 @@ vi:
     more_info: "Nếu bạn không yêu cầu đặt lại mật khẩu của mình, vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."
   bookings:
     title: "Quản lý đặt sân"
+    description: "Thông tin người dùng và thông tin đơn đặt hàng"
     booked_by: "Người đặt"
     contact: "Liên hệ"
     pitch_name: "Sân bóng"
@@ -247,6 +248,14 @@ vi:
       status: "Trạng thái"
       placeholder: "Tìm kiếm ...."
       book_pitch: "Đặt sân bóng"
+    delete:
+      success: "Delete successfully"
+      failed: "Delete failed"
+    modal:
+      title: "Xóa đơn đặt hàng"
+      description: "Bạn có chắc chắn muốn xóa đơn đặt hàng này không?"
+      yes: "Có"
+      cancel: "Hủy bỏ"
   reviews:
     title: "Đánh giá"
     posted: "Đã đánh giá %{time} trước."

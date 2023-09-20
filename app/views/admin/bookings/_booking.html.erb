@@ -33,8 +33,11 @@
   </td>
   <td class="p-3">
     <div class="flex items-center gap-5">
-      <i class="cursor-pointer fa-solid fa-eye text-black"></i>
-      <i class="cursor-pointer fa-solid fa-trash text-red-500"></i>
+      <%= link_to admin_booking_path(booking.id), class: "cursor-pointer text-black" do %>
+        <i class="fas fa-eye"></i>
+      <% end %>
+      <i class="cursor-pointer fa-solid fa-trash text-red-500" onclick="toggleModal('modal-id')"></i>
+      <%= render "admin/bookings/modal", booking_item: booking %>
     </div>
   </td>
 </tr>

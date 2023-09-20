@@ -1,10 +1,21 @@
 class Admin::BookingsController < Admin::BaseController
-  before_action :load_booking, only: %i(update)
+  before_action :load_booking, only: %i(update show destroy)
 
   def index
     search_bookings
     @pagy, @bookings = pagy @bookings,
                             items: Settings.bookings.per_page
+  end
+
+  def show; end
+
+  def destroy
+    if @booking.destroy
+      flash[:success] = t("booking.delete.success").capitalize
+    else
+      flash[:danger] = t("booking.delete.failed").capitalize
+    end
+    redirect_to admin_bookings_path
   end
 
   def update
