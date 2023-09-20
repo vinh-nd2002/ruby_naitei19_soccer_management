@@ -12,6 +12,13 @@ vi:
     price: "Giá: %{price}/Giờ"
     booking: "Đặt sân"
     not_found: "Không tìm thấy kết quả nào."
+    favorite:
+      like: "Thêm vào mục yêu thích"
+      unlike: "Xóa khỏi mục ưa thích"
+      added: "Đã thêm"
+      failed: "Thêm thất bại"
+      removed: "Đã xóa"
+      remove_failed: "Xóa thất bại"
     search_form:
       name: "Tên sân bóng"
       placeholder_name: "Nhập tên sân bóng"
