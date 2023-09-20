@@ -22,6 +22,10 @@ class Booking < ApplicationRecord
     where(booking_status: status) if status.present?
   })
 
+  scope :search_by_booked_pitch_name, lambda {|booked_pitch_name|
+    joins(:user).where(users: {name: booked_pitch_name})
+  }
+
   scope :search_by_created_at, (lambda {|date|
     where(created_at: date.beginning_of_day..date.end_of_day) if date.present?
   })

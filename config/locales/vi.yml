@@ -155,8 +155,8 @@ vi:
       success: "Find thành công"
       failed: "Find thất bại"
   side_bar:
-    create_pitch: "Tạo sân bóng mới"
-    user_manage: "Quản lý user"
+   create_pitch: "Tạo sân bóng mới"
+   booked_pitch: "Quản lý sân đã đặt"
   activation:
     success: "Tài khoản đã được kích hoạt!"
     invalid_link: "Liên kết kích hoạt không hợp lệ"
@@ -218,7 +218,7 @@ vi:
     failed: "Có lỗi xảy ra khi đặt hàng."
     need_before: "phải trước end_at"
     duplicate: "Sân đã được đặt trong khoảng thời gian này."
-    form: 
+    form:
       user_name: "Tên tài khoản"
       phone: "Điện thoại"
       football_pitch_name: "Tên sân bóng đá"
@@ -228,3 +228,12 @@ vi:
       total: "Tổng chi phí (đồng)"
       submit: "Xác nhận đơn hàng"
       cancel: "Hủy bỏ"
+    list:
+      title: "Danh sách các sân bóng đã được đặt của ngừoi dùng"
+      football_pitch_name: "Tên sân bóng"
+      booking_price: "Giá đặt"
+      booking_note: "Ghi chú"
+      created_at: "Tạo lúc"
+      status: "Trạng thái"
+      placeholder: "Tìm kiếm ...."
+      book_pitch: "Đặt sân bóng"

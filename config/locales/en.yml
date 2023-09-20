@@ -157,6 +157,7 @@ en:
   side_bar:
     create_pitch: "Create new football pitch"
     user_manage: "User manager"
+    booked_pitch: "Manage Reserved Field"
   activation:
     success: "Account activated!"
     invalid_link: "Invalid activation link"
@@ -218,7 +219,7 @@ en:
     failed: "Booking failed"
     need_before: "must be before end_at"
     duplicate: "The pitch has been set for this period."
-    form: 
+    form:
       user_name: "User name"
       phone: "Phone"
       football_pitch_name: "Football pitch name"
@@ -228,3 +229,12 @@ en:
       total: "Total cost (dong)"
       submit: "Order confirmation"
       cancel: "Cancel"
+    list:
+      title: "List football pitches have been booked"
+      football_pitch_name: "Football pitch name"
+      booking_price: "Booking's price"
+      booking_note: "Note"
+      created_at: "Created at"
+      status: "Status"
+      placeholder: "Search ...."
+      book_pitch: "Book a football pitch"
