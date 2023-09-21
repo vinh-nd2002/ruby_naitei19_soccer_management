@@ -263,3 +263,7 @@ vi:
     failed: "Đánh giá thất bại"
     comment: "Đánh giá"
     rating: "Số sao"
+  system:
+    monthly_revenue:
+      subject: "Báo cáo thống kế"
+      title: "Thống kê doanh thu tháng: "
