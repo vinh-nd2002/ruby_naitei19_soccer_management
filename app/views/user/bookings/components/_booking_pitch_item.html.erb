@@ -24,6 +24,14 @@
         <% if booking_football_pitch.is_approve? %>
           <i class="fa-regular fa-comment text-2xl cursor-pointer" id="create-form-review-<%= booking_football_pitch.id %>" ></i>
         <% end %>
+        <% if booking_football_pitch.is_pending? %>
+          <%= form_for booking_football_pitch, method: :put, remote: true, html: { class: 'd-inline' } do |f| %>
+            <%= f.hidden_field :status, value: "canceled" %>
+            <button type="submit" class="trash-button" data-turbo-confirm="<%= t("booking.cancel.confirm") %>">
+              <i class="fa-solid fa-trash text-2xl cursor-pointer"></i>
+            </button>
+          <% end %>
+        <% end %>
         <%= booking_football_pitch.booking_status %>
       </div>
     </td>
