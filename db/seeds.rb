@@ -40,20 +40,24 @@ football_pitch_ids = FootballPitch.pluck(:id)
 # end
 
 
-# Booking.destroy_all
-# 50.times do
-#   user_id = user_ids.sample
-#   football_pitch_id = football_pitch_ids.sample
-#   Booking.create!(
-#     user_id: user_id,
-#     football_pitch_id: football_pitch_id,
-#     booking_price: (Faker::Number.between(from: 10, to: 99) * 10000),
-#     start_at: Time.now,
-#     end_at: Time.now + 1*60*60,
-#     note: "Hàng dễ vỡ xin nhẹ tay",
-#     booking_status: Faker::Number.between(from: 0, to: 5)
-#   )
-# end
+(1..12).each do |month|
+  # Tạo 50 booking cho mỗi tháng
+  50.times do
+    user_id = user_ids.sample
+    football_pitch_id = football_pitch_ids.sample
+    start_at = Time.now - (month - 4).months # Để đặt ngày bắt đầu trong tháng tương ứng
+    end_at = start_at + 1.hour
+    Booking.create!(
+      user_id: user_id,
+      football_pitch_id: football_pitch_id,
+      booking_price: (Faker::Number.between(from: 10, to: 99) * 10000),
+      start_at: start_at,
+      end_at: end_at,
+      note: "Hàng dễ vỡ xin nhẹ tay",
+      booking_status: Faker::Number.between(from: 0, to: 5)
+    )
+  end
+end
 
 # User.create!(name:  "Admin",
 #   email: "admin@gmail.com",
@@ -89,13 +93,13 @@ football_pitch_ids = FootballPitch.pluck(:id)
 # )
 # end
 
-100.times do
-  user_id = user_ids.sample
-  football_pitch_id = football_pitch_ids.sample
-  Review.create!(
-    user_id: user_id,
-    football_pitch_id: football_pitch_id,
-    comment: Faker::Lorem.sentence,
-    rating: Faker::Number.between(from: 1, to: 5),
-  )
-end
+# 100.times do
+#   user_id = user_ids.sample
+#   football_pitch_id = football_pitch_ids.sample
+#   Review.create!(
+#     user_id: user_id,
+#     football_pitch_id: football_pitch_id,
+#     comment: Faker::Lorem.sentence,
+#     rating: Faker::Number.between(from: 1, to: 5),
+#   )
+# end

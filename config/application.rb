@@ -25,5 +25,6 @@ module RailsTutorial
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.available_locales = Settings.i18n_setting.available_locales
     config.i18n.default_locale = Settings.i18n_setting.default_locale
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
