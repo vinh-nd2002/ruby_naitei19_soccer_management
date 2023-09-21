@@ -1,0 +1,6 @@
+<div class="mb-2 border-t w-full">
+  <p class="font-bold mb-0 text-lg"><%= current_user.name %></p>
+  <p class="mb-0"><%= review.comment %></p>
+  <p class="text-orange-500 mb-0"><%= render_star_rating review.rating %></p>
+  <small class="text-sm"><%= t("reviews.posted", time: time_ago_in_words(review.created_at)) %></small>
+</div>

@@ -103,7 +103,7 @@ vi:
       not_found: "Không tìm thấy người dùng để xóa"
     static_pages:
       show:
-        title: "Danh sách sân bóng đá"
+        title: "Chi tiết sân bóng"
         name: "Tên"
         location: "Địa điểm"
         length: "Chiều dài"
@@ -113,6 +113,8 @@ vi:
         description: "Miêu tả"
         previous: "Trước"
         next: "Sau"
+    change_info: "Thay đổi thông tin"
+    hello: "Xin chào, %{name}"
     update:
       basic_info:
         success: "Cập nhật thông tin cơ bản của người dùng thành công"
@@ -164,6 +166,7 @@ vi:
   side_bar:
    create_pitch: "Tạo sân bóng mới"
    booked_pitch: "Quản lý sân đã đặt"
+   user_manage: "Quản lý user"
   activation:
     success: "Tài khoản đã được kích hoạt!"
     invalid_link: "Liên kết kích hoạt không hợp lệ"
@@ -244,3 +247,10 @@ vi:
       status: "Trạng thái"
       placeholder: "Tìm kiếm ...."
       book_pitch: "Đặt sân bóng"
+  reviews:
+    title: "Đánh giá"
+    posted: "Đã đánh giá %{time} trước."
+    success: "Đánh giá thành công"
+    failed: "Đánh giá thất bại"
+    comment: "Đánh giá"
+    rating: "Số sao"

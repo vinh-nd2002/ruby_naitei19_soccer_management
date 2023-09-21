@@ -21,3 +21,8 @@ bookings:
 activate:
   invalid_time: 30
 date_format: "%F"
+end_at_format: "%H:%M %p"
+created_at_format: "%F %H:%M %p"
+reviews:
+  rating_min: 1
+  rating_max: 5

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :football_pitches, only: %i(index)
       resources :favorite_pitches, only: %i(index create destroy)
       resources :static_pages
+      resources :reviews
       resources :account_activations, only: %i(edit)
       resources :users do
         member do

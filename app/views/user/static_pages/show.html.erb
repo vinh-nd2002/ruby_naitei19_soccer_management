@@ -1,65 +1,64 @@
-<section class="bg-white dark:bg-gray-900">
-  <div class="px-5 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28">
-    <div class="mx-auto my-auto flex justify-center items-center">
-      <h3><%= t "users.static_pages.show.title" %></h3>
-    </div>
-    <div class="flex">
-      <table class="w-1/2">
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.name" %></td>
-          <td><%= @football_pitch.name %></td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.location" %>></td>
-          <td><%= @football_pitch.location %></td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.length" %></td>
-          <td><%= @football_pitch.length %>w</td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.width" %></td>
-          <td><%= @football_pitch.width %></td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.capacity" %></td>
-          <td><%= @football_pitch.capacity %></td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.price" %></td>
-          <td><%= number_to_currency @football_pitch.price %></td>
-        </tr>
-        <tr>
-          <td class="text-bold"><%= t "users.static_pages.show.description" %></td>
-          <td><%= @football_pitch.description %></td>
-        </tr>
-      </table>
-      <div id="carouselExampleIndicators" class="carousel slide w-1/2">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner z-1">
-          <div class="carousel-item active">
-            <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden"><%= t "users.static_pages.show.previous" %></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden"><%= t "users.static_pages.show.next" %></span>
-        </button>
+<section class="container">
+  <h3 class="font-bold my-5"><%= t "users.static_pages.show.title" %></h3>
+  <div class="flex gap-5 mb-5 h-[400px]">
+    <div id="carouselExampleIndicators" class="carousel slide w-1/2">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
+      <div class="carousel-inner z-1">
+        <div class="carousel-item active">
+          <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://foba.vn/wp-content/uploads/2020/08/thu-nhap-cao-nho-kinh-doanh-san-bong-da-co-nhan-tao.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"><%= t "users.static_pages.show.previous" %></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"><%= t "users.static_pages.show.next" %></span>
+      </button>
     </div>
+    <ul class="w-1/2">
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.name" %></span>
+        <span><%= @football_pitch.name %></span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.location" %></span>
+        <span><%= @football_pitch.location %></span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.length" %></span>
+        <span><%= @football_pitch.length %>w</span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.width" %></span>
+        <span><%= @football_pitch.width %></span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.capacity" %></span>
+        <span><%= @football_pitch.capacity %></span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.price" %></span>
+        <span><%= number_to_currency @football_pitch.price %></span>
+      </li>
+      <li class="flex justify-between items-center mb-4 text-base">
+        <span class="text-bold"><%= t "users.static_pages.show.description" %></span>
+        <span><%= @football_pitch.description %></span>
+      </li>
+    </ul>
   </div>
+  <h3 class="font-bold my-5"><%= t "reviews.title" %></h3>
+  <%= render @football_pitch.reviews%>
 </section>

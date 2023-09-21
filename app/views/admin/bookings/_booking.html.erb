@@ -12,19 +12,19 @@
     <p class="mb-0"><%= booking.football_pitch_location %></p>
   </td>
   <td class="p-3">
-    <p class="mb-0"><%= booking.start_at.strftime("%F") %></p>
+    <p class="mb-0"><%= booking.start_at.strftime(Settings.date_format) %></p>
   </td>
   <td class="p-3">
-    <p class="mb-0"><%= booking.start_at.strftime("%H:%M %p") %></p>
+    <p class="mb-0"><%= booking.start_at.strftime(Settings.end_at_format) %></p>
   </td>
   <td class="p-3">
-    <p class="mb-0"><%= booking.end_at.strftime("%H:%M %p") %></p>
+    <p class="mb-0"><%= booking.end_at.strftime(Settings.end_at_format) %></p>
   </td>
   <td class="p-3">
     <p class="mb-0"><%= number_to_currency(booking.booking_price) %></p>
   </td>
   <td class="p-3">
-    <p class="mb-0"><%= booking.created_at.strftime("%F") %></p>
+    <p class="mb-0"><%= booking.created_at.strftime(Settings.created_at_format) %></p>
   </td>
   <td class="p-3">
     <%= form_for booking, url: admin_booking_path(booking) do |f| %>

@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_031904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "football_pitch_types"
+    t.float "average_rating", default: 0.0
   end
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -96,8 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_031904) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["football_pitch_id"], name: "index_reviews_on_football_pitch_id", unique: true
-    t.index ["user_id"], name: "index_reviews_on_user_id", unique: true
+    t.index ["football_pitch_id"], name: "index_reviews_on_football_pitch_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
