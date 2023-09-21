@@ -103,16 +103,17 @@ vi:
       not_found: "Không tìm thấy người dùng để xóa"
     static_pages:
       show:
-        title: "Chi tiết sân bóng"
-        name: "Tên"
-        location: "Địa điểm"
-        length: "Chiều dài"
-        width: "Chiều rộng"
-        capacity: "Sức chứa"
-        price: "Giá tiền"
-        description: "Miêu tả"
-        previous: "Trước"
-        next: "Sau"
+       title: "Chi tiết sân bóng"
+       name: "Tên"
+       location: "Địa điểm"
+       length: "Chiều dài"
+       width: "Chiều rộng"
+       capacity: "Sức chứa"
+       price: "Giá tiền"
+       description: "Miêu tả"
+       previous: "Trước"
+       next: "Sau"
+       avg_rating: "Đánh giá"
     update:
       basic_info:
         success: "Cập nhật thông tin cơ bản của người dùng thành công"
