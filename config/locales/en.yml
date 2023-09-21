@@ -227,6 +227,7 @@ en:
     failed: "Booking failed"
     need_before: "must be before end_at"
     duplicate: "The pitch has been set for this period."
+    not_found: "Not found"
     form:
       user_name: "User name"
       phone: "Phone"
@@ -254,6 +255,10 @@ en:
       description: "Are you sure want to delete booking's order"
       yes: "Yes"
       cancel: "Cancel"
+    cancel:
+      success: "Booking has been canceled successfully."
+      failed: "This booking cannot be canceled."
+      confirm: "Are you sure you want to cancel your booking?"
   reviews:
     title: "Reviews"
     posted: "Posted %{time} ago."

@@ -3,7 +3,7 @@ class User::BookingsController < User::BaseController
   before_action :logged_in_user
   before_action :load_football_pitch, only: [:new, :create]
   before_action :current_user_booking_pitches, only: :index
-
+  before_action :find_booking, only: :update
   def index
     search_booked_pitch
     @pagy, @booking_football_pitches = pagy @booking_football_pitches,
@@ -21,6 +21,16 @@ class User::BookingsController < User::BaseController
   end
 
   def edit; end
+
+  def update
+    if @booking.is_pending?
+      @booking.is_cancelled!
+      flash[:success] = t "booking.cancel.success"
+    else
+      flash[:danger] = t "booking.cancel.failed"
+    end
+    redirect_to bookings_path
+  end
 
   def create
     @booking = current_user.bookings.new(
@@ -74,5 +84,13 @@ class User::BookingsController < User::BaseController
     @booking_football_pitches = current_user
                                 .bookings
                                 .search_by_booked_pitch_name booked_pitch
+  end
+
+  def find_booking
+    @booking = Booking.find_by(id: params[:id])
+    return if @booking
+
+    flash[:error] = t("booking.not_found")
+    redirect_to root_path
   end
 end

@@ -113,8 +113,6 @@ vi:
         description: "Miêu tả"
         previous: "Trước"
         next: "Sau"
-    change_info: "Thay đổi thông tin"
-    hello: "Xin chào, %{name}"
     update:
       basic_info:
         success: "Cập nhật thông tin cơ bản của người dùng thành công"
@@ -229,6 +227,7 @@ vi:
     failed: "Có lỗi xảy ra khi đặt hàng."
     need_before: "phải trước end_at"
     duplicate: "Sân đã được đặt trong khoảng thời gian này."
+    not_found: "Không tìm thấy"
     form:
       user_name: "Tên tài khoản"
       phone: "Điện thoại"
@@ -256,6 +255,10 @@ vi:
       description: "Bạn có chắc chắn muốn xóa đơn đặt hàng này không?"
       yes: "Có"
       cancel: "Hủy bỏ"
+    cancel:
+      success: "Booking đã được hủy thành công."
+      failed: "Không thể hủy booking này."
+      confirm: "Bạn có chắc chắn muốn hủy booking không?"
   reviews:
     title: "Đánh giá"
     posted: "Đã đánh giá %{time} trước."
