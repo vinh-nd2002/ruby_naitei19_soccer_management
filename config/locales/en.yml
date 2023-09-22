@@ -113,6 +113,7 @@ en:
         description: "Description"
         previous: "Previous"
         next: "Next"
+        avg_rating: "Rating"
     update:
       basic_info:
         success: "Update user's basic information successfully"
