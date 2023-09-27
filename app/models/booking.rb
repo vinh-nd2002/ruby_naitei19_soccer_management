@@ -9,6 +9,8 @@ class Booking < ApplicationRecord
     :booking_price, :start_at, :end_at, :price,
     :user_name, :phone, :football_pitch_n
   ].freeze
+
+  validates :start_at, :end_at, presence: true
   # association
   belongs_to :user
   belongs_to :football_pitch

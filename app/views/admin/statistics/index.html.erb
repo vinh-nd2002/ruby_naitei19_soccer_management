@@ -1,0 +1,61 @@
+<div class="container mx-auto p-4">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="col-span-1">
+      <h2 class="text-xl font-semibold mb-4 ml-2"><%= t "statistic.title" %></h2>
+      <%= form_tag admin_statistics_path, method: :get, class: "space-y-4" do %>
+        <div class="flex ml-4">
+          <div class="w-1/4">
+            <%= label_tag :start_date, t("statistic.month"), class: "block text-sm font-medium text-gray-700" %>
+            <%= text_field_tag :start_date, params[:start_date], type: "month", class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md", id: "choose-month" %>
+          </div>
+      
+          <div class="w-1/4">
+            <%= label_tag :pitch_type, t("statistic.capacity"), class: "block text-sm font-medium text-gray-700" %>
+            <%= select_tag :pitch_type, options_for_select([5, 7, 9, 11], params[:pitch_type]), class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300" %>
+          </div>
+          <%= submit_tag t("statistic.submit"), class: "mt-4 px-4 py-2 ml-2 font-semibold text-white !bg-blue-500 rounded hover:bg-blue-600", id: "thong-ke-button" %>
+        </div>
+      <% end %>
+      
+      <% if @total.present? %>
+      <p id="total-element" class="ml-4 mt-2 text-red"><%= t("statistic.choose_month") %><%= number_to_currency @total %></p>
+    <% end %>
+    </div>
+
+    <div class="col-span-1 flex space-x-4 ">
+      <div class="bg-white shadow overflow-hidden rounded-lg flex-1 mr-2">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2 text-center"><%= t "statistic.user" %></h3>
+          <p class="text-3xl font-extrabold text-indigo-600 text-center text-blue"><%= @total_users %></p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow overflow-hidden rounded-lg flex-1 mr-2">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2 text-center"><%= t "statistic.pitch" %></h3>
+          <p class="text-3xl font-extrabold text-indigo-600 text-center text-green"><%= @total_pitch%></p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow overflow-hidden rounded-lg flex-1">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2 text-center"><%= t "statistic.favorite" %></h3>
+          <p class="text-2xl font-extrabold text-indigo-600 text-center text-red"><%= @most_booked_pitch %></p>
+        </div>
+      </div>
+    </div>  
+
+  </div>
+  <div class="mt-5">
+    <div class="flex">
+      <div class="w-1/2">
+        <h1 class="text-xl"><%= t "statistic.six_month" %></h1>
+        <%= line_chart @data, round: 2, zeros: true %>
+      </div>
+      <div class="w-1/2">
+        <h1 class="text-xl"><%= t "statistic.this_month" %><%= number_to_currency @total_price %></h1>
+        <%= pie_chart @data1 %>
+      </div>
+    </div>
+  </div>
+</div>

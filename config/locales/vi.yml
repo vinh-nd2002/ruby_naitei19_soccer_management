@@ -166,6 +166,7 @@ vi:
    create_pitch: "Tạo sân bóng mới"
    booked_pitch: "Quản lý sân đã đặt"
    user_manage: "Quản lý user"
+   dashboard: "Bảng tin"
   activation:
     success: "Tài khoản đã được kích hoạt!"
     invalid_link: "Liên kết kích hoạt không hợp lệ"
@@ -271,3 +272,14 @@ vi:
     monthly_revenue:
       subject: "Báo cáo thống kế"
       title: "Thống kê doanh thu tháng: "
+  statistic:
+    title: "Thống kê doanh thu hàng tháng"
+    this_month: "Tổng doanh thu tháng này: "
+    six_month: "Doanh thu 6 tháng gần nhất"
+    choose_month: "Doanh thu là: "
+    user: "Số người dùng"
+    pitch: "Số sân"
+    favorite: "Sân được yêu thích nhất"
+    submit: "Thống kê"
+    month: "Tháng"
+    capacity: "Loại sân"

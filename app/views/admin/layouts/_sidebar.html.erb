@@ -31,6 +31,12 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item cursor-pointer">
+          <a class="nav-link" href="<%= admin_statistics_path %>">
+            <i class="nav-icon fa-solid fa-football"></i>
+            <p><%= t "side_bar.dashboard" %></p>
+          </a>
+        </li>
+        <li class="nav-item cursor-pointer">
           <a class="nav-link" href="<%= admin_football_pitches_path %>">
             <i class="nav-icon fa-solid fa-football"></i>
             <p><%= t "football_pitches.admin" %></p>

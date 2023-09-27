@@ -26,7 +26,8 @@ Rails.application.routes.draw do
       # resources
       resources :users
       resources :football_pitches
-      resources :bookings
+      resources :bookings, only: %i(index update)
+      resources :statistics, only: %i(index show)
     end
 
     get "/signup",  to: "registers#new"

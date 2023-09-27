@@ -166,6 +166,7 @@ en:
     create_pitch: "Create new football pitch"
     user_manage: "User manager"
     booked_pitch: "Manage Reserved Field"
+    dashboard: "Dashboard"
   activation:
     success: "Account activated!"
     invalid_link: "Invalid activation link"
@@ -271,3 +272,14 @@ en:
     monthly_revenue:
       subject: "Monthly Revenue Report"
       title: "Monthly revenue statistics"
+  statistic:
+    title: "Monthly revenue statistics"
+    this_month: "Total revenue this month: "
+    six_month: "Revenue in the most recent 6 months"
+    choose_month: "Revenue is: "
+    user: "Number of users"
+    pitch: "Number of pitches"
+    favorite: "Favorite pitch"
+    submit: "Statistic"
+    month: "Month"
+    capacity: "Capacity"
