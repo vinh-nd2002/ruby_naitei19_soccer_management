@@ -2,6 +2,8 @@ class FootballPitch < ApplicationRecord
   # enum
   enum football_pitch_types: {slot5: 0, slot7: 1, slot10: 2}
 
+  attr_accessor :max_price, :min_price
+
   # association
   has_many :reviews, dependent: :destroy
   has_many :favorite_pitches, dependent: :destroy
@@ -62,6 +64,20 @@ class FootballPitch < ApplicationRecord
       values_to_check.all? do |value|
         football_pitch.bookings.booking_statuses[value].present?
       end
+    end
+
+    def ransackable_attributes(*)
+      %w(
+        average_rating capacity created_at description football_pitch_types
+        id length location name price updated_at width min_price max_price
+      )
+    end
+
+    def ransackable_associations(*)
+      %w(
+        bookings favorite_pitches favorited_by_users images_attachments
+        images_blobs reviews users
+      )
     end
   end
 end

@@ -19,5 +19,8 @@ document.addEventListener("turbo:load", function () {
     };
     minPriceInput.value = selectedPriceRange.min;
     maxPriceInput.value = selectedPriceRange.max;
+
+    const form = document.getElementById("football_pitch_search");
+    form.requestSubmit();
   });
 });

@@ -31,6 +31,7 @@ en:
       end_time: "End time"
       capacity: "Capacity"
       price: "Price"
+      average_rating: "Rating"
   football_pitches:
     title: "List pitches"
     admin: "Football Pitches management"
