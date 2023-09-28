@@ -20,7 +20,9 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :non_admin, ->{where(is_admin: nil)}
-
+  scope :by_user, ->(user){where("name LIKE ?", "%#{user}%")}
+  scope :by_email, ->(email){where("email LIKE ?", "%#{email}%")}
+  scope :by_phone, ->(phone){where("phone LIKE ?", "%#{phone}%")}
   # association
   has_many :favorite_pitches, dependent: :destroy
   has_many :football_pitches, through: :favorite_pitches,

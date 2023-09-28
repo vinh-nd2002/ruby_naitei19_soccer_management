@@ -1,7 +1,10 @@
-<div class="p-2 mx-10">
-  <h2 class="mb-4 text-4xl font-semibold leading-3">Quản lý user</h2>
+<div class="container">
+  <h2 class="mb-4 text-4xl font-semibold leading-3"><%= t "side_bar.user_manage" %></h2>
+  <div class=" ">
+    <%= render "search_user_form" %>
+  </div>
   <div class="overflow-x-auto">
-    <table class="min-w-full">
+    <table class="w-full">
       <thead class="bg-blue-500 text-white">
         <tr class="text-left">
         <th class="p-3"><%= t("admin.users.name") %></th>
@@ -40,7 +43,7 @@
       </tbody>
     </table>
   </div>
-  <div class="flex justify-center items-center my-10">
+  <div class="flex justify-center items-center my-2">
     <%== pagy_bootstrap_nav(@pagy) %>
   </div>
 </div>

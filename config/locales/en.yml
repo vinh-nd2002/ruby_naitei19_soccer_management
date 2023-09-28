@@ -284,3 +284,11 @@ en:
     submit: "Statistic"
     month: "Month"
     capacity: "Capacity"
+  search_form_user:
+    name: "Name"
+    placeholder_name: "Enter Name"
+    placeholder_email: "Enter Email" 
+    placeholder_phone: "Enter Phone"
+    email: "Email"
+    phone: "Phone"
+    submit: "Search"
