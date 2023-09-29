@@ -7,5 +7,6 @@ FactoryBot.define do
     is_activated { true }
     phone { Faker::PhoneNumber.phone_number }
     activation_at { Time.now }
+    is_admin { true }
   end
 end
