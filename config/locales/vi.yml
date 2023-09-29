@@ -284,3 +284,11 @@ vi:
     submit: "Thống kê"
     month: "Tháng"
     capacity: "Loại sân"
+  search_form_user:
+    name: "Tên"
+    placeholder_name: "Nhập tên"
+    placeholder_email: "Nhập Email" 
+    placeholder_phone: "Nhập số điện thoại"
+    email: "Email"
+    phone: "Điện thoại"
+    submit: "Tìm kiếm"

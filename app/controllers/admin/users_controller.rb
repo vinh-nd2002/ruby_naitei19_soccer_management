@@ -5,6 +5,9 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @users = User.non_admin
+                 .by_user(params[:name])
+                 .by_email(params[:email])
+                 .by_phone(params[:phone])
     @pagy, @users = pagy(@users, items: Settings.users.per_page)
   end
 
