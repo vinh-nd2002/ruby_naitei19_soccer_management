@@ -116,10 +116,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_15_073819) do
     t.string "reset_digest_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "provider"
-    t.string "uid"
-    t.string "oauth_token"
-    t.string "oauth_expires_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

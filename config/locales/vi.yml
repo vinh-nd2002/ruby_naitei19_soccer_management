@@ -31,6 +31,7 @@ vi:
       end_time: "Giờ kết thúc"
       capacity: "Số người"
       price: "Tiền sân"
+      average_rating: "Số sao"
   football_pitches:
     title: "Danh sách sân bóng đá"
     admin: "Quản lý sân bóng"

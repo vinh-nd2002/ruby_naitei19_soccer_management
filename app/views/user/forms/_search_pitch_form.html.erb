@@ -1,49 +1,38 @@
-<div class="container">
-  <%= form_tag(@form_action, method: :get, class: "my-3 p-3 border rounded-md") do %>
-    <div class="flex flex-col gap-4">
-      <div class="flex gap-2">
-        <div class="flex-1">
-          <%= label_tag :name, t("football_pitch.search_form.name") %>
-          <%= text_field_tag :name, params[:name],
-              placeholder: t("football_pitch.search_form.placeholder_name"), class: "w-full p-2 border rounded-md" %>
-        </div>
-        <div class="flex-2">
-          <%= label_tag :location, t("football_pitch.search_form.location") %>
-          <%= text_field_tag :location, params[:location],
-              placeholder: t("football_pitch.search_form.placeholder_location"), class: "w-full p-2 border rounded-md" %>
-        </div>
-        <div class="mt-[32px]">
-          <%= submit_tag t("football_pitch.search_form.search"), class: "!bg-blue-700 hover:bg-blue-800 text-white py-2 px-3 border inline-block font-bold" %>
-        </div>
+<%= search_form_for @q, url: @form_action, html: { method: :get, class: "my-3 p-3 border rounded-md container" } do |f| %>
+  <div class="flex flex-col gap-4">
+    <div class="flex gap-2">
+      <div class="flex-1">
+        <%= f.label :name, t("football_pitch.search_form.name") %>
+        <%= f.search_field :name_cont,
+            placeholder: t("football_pitch.search_form.placeholder_name"), class: "w-full p-2 border rounded-md" %>
       </div>
-      <div class="grid grid-cols-5 gap-4 items-center flex-auto">
-        <div>
-          <%= label_tag :date, t("football_pitch.search_form.date"), class: "mb-0" %>
-          <%= date_field_tag :date, params[:date], class: "w-full p-2 border rounded-md" %>
-        </div>
-        <div>
-          <%= label_tag :start_time, t("football_pitch.search_form.start_time"), class: "mb-0" %>
-          <%= time_field_tag :start_time, params[:start_time], class: "w-full p-2 border rounded-md" %>
-        </div>
-        <div>
-          <%= label_tag :end_time, t("football_pitch.search_form.end_time"), class: "mb-0" %>
-          <%= time_field_tag :end_time, params[:end_time], class: "w-full p-2 border rounded-md" %>
-        </div>
-        <div>
-          <%= label_tag :capacity, t("football_pitch.search_form.capacity"), class: "mb-0" %>
-          <%= select_tag :capacity, options_for_select(["", 5, 7, 9, 11], params[:capacity]), class: "w-full p-2 border" %>
-        </div>
-        <div>
-          <%= label_tag :price, t("football_pitch.search_form.price"), class: "mb-0" %>
-          <%= select_tag :price, options_for_select(
-            ["Tất cả", "Dưới 200.000đ", "200.000đ - 500.000đ", "500.000đ - 1 triệu", "Trên 1 triệu"],
-            params[:price]), class: "w-full p-2 border", id: "price_select" %>
-          <%= hidden_field_tag :min_price, params[:min_price], id: "min_price_input" %>
-          <%= hidden_field_tag :max_price, params[:max_price], id: "max_price_input" %>
-        </div>
-        <div>
+      <div class="mt-[32px]">
+        <%= f.submit t("football_pitch.search_form.search"), class: "!bg-blue-700 hover:bg-blue-800 text-white p-2 border inline-block font-bold" %>
       </div>
     </div>
+    <div class="grid items-center grid-cols-4 gap-4">
+      <div>
+        <%= f.label :location, t("football_pitch.search_form.location"), class: "mb-0" %>
+        <%= f.search_field :location_cont,
+            placeholder: t("football_pitch.search_form.placeholder_location"), class: "w-full p-2 border rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :average_rating, t("football_pitch.search_form.average_rating"), class: "mb-0" %>
+        <%= f.select :average_rating_gteq, ["", 1, 2, 3, 4, 5], {selected: params.dig(:q, :average_rating_gteq)},
+            class: "w-full p-2 border", onchange: "this.form.requestSubmit()" %>
+      </div>
+      <div>
+        <%= f.label :capacity, t("football_pitch.search_form.capacity"), class: "mb-0" %>
+        <%= f.select :capacity_eq, ["", 5, 7, 9, 11], {selected: params.dig(:q, :capacity_eq)}, class: "w-full p-2 border",
+            onchange: "this.form.requestSubmit()" %>
+      </div>
+      <div>
+        <%= f.label :price, t("football_pitch.search_form.price"), class: "mb-0" %>
+        <%= f.select :price, ["Tất cả", "Dưới 200.000đ", "200.000đ - 500.000đ", "500.000đ - 1 triệu", "Trên 1 triệu"],
+            {selected: params.dig(:q, :price)}, class: "w-full p-2 border", id: "price_select" %>
+        <%= f.hidden_field :max_price, id: "max_price_input" %>
+        <%= f.hidden_field :min_price, id: "min_price_input" %>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
