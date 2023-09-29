@@ -19,6 +19,7 @@ vi:
       failed: "Thêm thất bại"
       removed: "Đã xóa"
       remove_failed: "Xóa thất bại"
+      already_favorited: "Sân bóng đã nằm trong danh sách yêu thích"
     search_form:
       name: "Tên sân bóng"
       placeholder_name: "Nhập tên sân bóng"

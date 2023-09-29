@@ -19,6 +19,7 @@ en:
       failed: "Add failed"
       removed: "Removed"
       remove_failed: "Removed failed"
+      already_favorited: "Already favorited"
     search_form:
       name: "Football field's name"
       placeholder_name: "Please enter football field's name"

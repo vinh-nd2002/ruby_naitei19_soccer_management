@@ -52,7 +52,7 @@ class FootballPitch < ApplicationRecord
   validates :description, presence: true
   validates :football_pitch_types, presence: true,
             inclusion: {in: FootballPitch.football_pitch_types.keys}
-  validates :images, presence: true
+  # validates :images, presence: true
 
   # class methods
 
