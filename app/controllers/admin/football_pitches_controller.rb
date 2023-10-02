@@ -17,7 +17,8 @@ class Admin::FootballPitchesController < Admin::BaseController
   end
 
   def create
-    if FootballPitch.create! football_pitch_params
+    @football_pitch = FootballPitch.new football_pitch_params
+    if @football_pitch.save
       flash[:success] = t "football_pitches.create.success"
       redirect_to admin_football_pitches_path
     else
